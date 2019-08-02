@@ -8,37 +8,37 @@
 
 import UIKit
 
-enum NetworkError: Error {
-
-    case domainError
-    case decodingError
-    case responseError
-    case encodingError
-}
-
 class ViewController: UITableViewController {
 
     var courses: [Post] = []
+    let cellId = "cellId"
+
+    static let shared = ViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Course List"
         addBarButtonItems()
+
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+
     }
+
 
     fileprivate func addBarButtonItems() {
         let get = UIBarButtonItem(title: "GET", style: .plain, target: self, action: #selector(handleGet))
         navigationItem.rightBarButtonItems = [get]
-        print("HIiiiiiiii")
     }
 
-   @objc func handleGet() {
+
+
+    @objc func handleGet() {
 
     let url = "https://jsonplaceholder.typicode.com/posts"
     guard let unwrappedurl = URL(string: url) else { return }
 
-    fetchCoursesJSON(url: unwrappedurl) { (result) in
+   fetchCoursesJSON(url: unwrappedurl) { (result) in
 
         switch result {
 
@@ -78,9 +78,9 @@ class ViewController: UITableViewController {
 
                 completion(.success(posts))
 
-                DispatchQueue.main.async {
-                   self.tableView.reloadData()
-                }
+               DispatchQueue.main.async {
+                  self.tableView.reloadData()
+                  }
 
             } catch {
                 completion(.failure(.decodingError))
@@ -99,10 +99,14 @@ extension ViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+
         let course = courses[indexPath.row]
         cell.textLabel?.text = course.body
         cell.detailTextLabel?.text = String(course.title)
+
+        
         return cell
     }
 }
