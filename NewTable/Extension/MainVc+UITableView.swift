@@ -1,5 +1,5 @@
 //
-//  MainVc+UITableViewDataSource.swift
+//  MainVc+UITableView.swift
 //  NewTable
 //
 //  Created by Ilija Mihajlovic on 8/2/19.
@@ -24,9 +24,14 @@ extension MainVC {
         cell.textLabel?.text = course.body
         cell.detailTextLabel?.text = course.title
 
-
-
         return cell
+    }
+
+    //MARK: UITableView Delegate Method
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let delete = deleteTableViewCellWithSwipeAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
     }
 
 

@@ -13,8 +13,6 @@ final class MainVC: UITableViewController {
     var courses: [Post] = []
     let cellId = "cellId"
 
-    static let shared = MainVC()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
@@ -25,7 +23,8 @@ final class MainVC: UITableViewController {
 
 
     fileprivate func addBarButtonItems() {
-        let get = UIBarButtonItem(title: "GET", style: .plain, target: self, action: #selector(printJSON))
+        let get = UIBarButtonItem(title: "GET", style: .plain, target: self, action: #selector(printJSONData))
+        get.tintColor = .orange
         navigationItem.rightBarButtonItems = [get]
 
     }
@@ -35,8 +34,18 @@ final class MainVC: UITableViewController {
         navigationItem.title = "Course List"
     }
 
+    func deleteTableViewCellWithSwipeAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            self.courses.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
+        }
+        action.backgroundColor = .orange
+        return action
+    }
 
-    @objc fileprivate func printJSON() {
+
+    @objc fileprivate func printJSONData() {
         let url = "https://jsonplaceholder.typicode.com/posts"
         guard let urlString = URL(string: url) else { return }
 
