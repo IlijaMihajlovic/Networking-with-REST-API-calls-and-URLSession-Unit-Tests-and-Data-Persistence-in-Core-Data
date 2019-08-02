@@ -8,6 +8,7 @@
 
 import Foundation
 
+//JSON Model
 struct Post: Codable {
     let userId: Int
     let id: Int
