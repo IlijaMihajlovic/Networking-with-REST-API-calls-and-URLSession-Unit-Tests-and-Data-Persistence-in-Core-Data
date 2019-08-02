@@ -9,3 +9,9 @@ ___
 
    Ilija 🖖 😄
 ___
+
+## Requirements
+- Swift 4.2
+- Xcode 9.2+
+- iOS 11.0+
+___
