@@ -10,7 +10,7 @@ import Foundation
 
 extension MainVC {
 
-    // API Request
+    // MARK - Fetch JSON Data
     func fetchJSON(url: URL, completion: @escaping (Result<[Post], NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
 
@@ -39,5 +39,55 @@ extension MainVC {
             }
             } .resume()
     }
+}
 
+
+
+// MARK: - Send API Request
+extension MainVC {
+
+    //Return a message in case of a success or an API Error if something went wrong
+    func save(_ messageToSave: Message ,completion: @escaping(Result<Message, NetworkError>) -> Void) {
+
+        let resourceString = "https://jsonplaceholder.typicode.com/albums"
+
+        guard let resourceURL = URL(string: resourceString) else { fatalError()}
+
+        do {
+            var urlRequest = URLRequest(url: resourceURL)
+            urlRequest.httpMethod = "POST"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            //encode our message text to JSON
+            urlRequest.httpBody = try JSONEncoder().encode(messageToSave)
+
+            // Creates a task that retrieves the contents of a URL based on the specified URL request object, and calls a handler upon completion.
+            URLSession.shared.dataTask(with: urlRequest) { (data, response, _) in
+
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
+
+                    //if there was a problem we have an error and we can't proceed so we return
+                    completion(.failure(.responseError))
+                    return
+                }
+
+                do {
+
+                    let messageData = try JSONDecoder().decode(Message.self, from: jsonData)
+
+                    //this was successful so we can pass along our message data object
+                    completion(.success(messageData))
+
+
+                } catch {
+                    completion(.failure(.decodingError))
+                }
+            }
+                //Resume the task
+                .resume()
+
+        } catch {
+            completion(.failure(.encodingError))
+        }
+    }
 }

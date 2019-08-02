@@ -1,8 +1,8 @@
 //
-//  Model.swift
+//  Post.swift
 //  NewTable
 //
-//  Created by Ilija Mihajlovic on 8/1/19.
+//  Created by Ilija Mihajlovic on 8/2/19.
 //  Copyright © 2019 Ilija Mihajlovic. All rights reserved.
 //
 
@@ -15,4 +15,3 @@ struct Post: Codable {
     let title: String
     let body: String
 }
-
