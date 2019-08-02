@@ -64,9 +64,9 @@
 		2404B4B122F36525000ABF57 /* NewTable */ = {
 			isa = PBXGroup;
 			children = (
+				2465FF4822F43E2000944C34 /* Enum */,
 				2465FF4522F43BDB00944C34 /* Extension */,
 				2465FF4922F43E2B00944C34 /* Model */,
-				2465FF4822F43E2000944C34 /* Enum */,
 				240BC97F22F4A5100090DF6C /* Controller */,
 				2404B4B922F36526000ABF57 /* Assets.xcassets */,
 				2404B4BB22F36526000ABF57 /* LaunchScreen.storyboard */,

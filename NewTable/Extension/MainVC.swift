@@ -16,7 +16,7 @@ final class MainVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-
+        //sendMessage()
         configureNav()
         addBarButtonItems()
     }
@@ -58,7 +58,7 @@ final class MainVC: UITableViewController {
             case .success(let posts):
 
                 posts.forEach({ (post) in
-                    print("JSON Data: \(post.body), \(post.title)")
+                    print("JSON Data: \(post.body), \(post.title), \(post.userId)")
                 })
 
             case .failure(let err):
@@ -84,17 +84,19 @@ final class MainVC: UITableViewController {
             guard let body = alert.textFields?[3].text! else { return }
 
             let message = Message(userId: userId, id: id, title: title, body: body)
+
             self.save(message, completion: { result in
 
                 switch result {
                 case .success(let message):
-                    print("Following \(message.title)")
+                    print("It's Working: \(message.title), \(message.body), \(message.userId) ")
 
                 case .failure(let error):
                     print("An error occured \(error)")
                 }
             })
         }
+
 
         sendAction.isEnabled = false
 
@@ -121,6 +123,7 @@ final class MainVC: UITableViewController {
             textFieldMessage.placeholder = "Message Body as String"
             textFieldMessage.keyboardType = .alphabet
         }
+
 
         guard let userIdAsNumber = alert.textFields?[0], let apiId = alert.textFields?[1], let apiMessage = alert.textFields?[2], let apiBody = alert.textFields?[3] else { return }
 
@@ -154,6 +157,7 @@ final class MainVC: UITableViewController {
         alert.addAction(cancelAction)
         present(alert,animated: true,completion: nil)
         }
+
     }
 
 
