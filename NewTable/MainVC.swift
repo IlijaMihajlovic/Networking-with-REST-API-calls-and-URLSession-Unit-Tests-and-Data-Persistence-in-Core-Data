@@ -12,7 +12,6 @@ final class MainVC: UITableViewController {
 
     var courses: [Post] = []
     let cellId = "cellId"
-    let url = "https://jsonplaceholder.typicode.com/posts"
 
     static let shared = MainVC()
 
@@ -38,6 +37,7 @@ final class MainVC: UITableViewController {
 
 
     @objc fileprivate func printJSON() {
+        let url = "https://jsonplaceholder.typicode.com/posts"
         guard let urlString = URL(string: url) else { return }
 
         fetchJSON(url: urlString) { (result) in
