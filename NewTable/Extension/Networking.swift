@@ -14,7 +14,7 @@ extension MainVC {
     func fetchJSON(url: URL, completion: @escaping (Result<[Post], NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
 
-            guard let jsonData = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
+            guard let jsonData = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 || httpResponse.statusCode == 200, error == nil else {
 
                 if let error = error as NSError?, error.domain == NSURLErrorDomain {
 
@@ -94,36 +94,4 @@ extension MainVC {
         }
     }
 }
-
-
-//extension MainVC {
-//    func sendObject(_ messageToSave: Message ,completion: @escaping(Result<Message, NetworkError>) -> Void) {
-//        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//
-//        do {
-//            let jsonBody = try JSONEncoder().encode(messageToSave)
-//            request.httpBody = jsonBody
-//        } catch {}
-//
-//        //An object that coordinates a group of related network data transfer tasks.
-//        let session = URLSession.shared
-//
-//        //Creates a task that retrieves the contents of a URL based on the specified URL request object, and calls a handler upon completion.
-//        let task = session.dataTask(with: request) { (data, _, _) in
-//            guard let data = data else { return }
-//
-//            do {
-//                let sentPost = try JSONDecoder().decode(Message.self, from: data)
-//                print(sentPost, sentPost.body, sentPost.title)
-//            } catch {}
-//        }
-//        //Resume the task
-//        task.resume()
-//    }
-//}
-
 
