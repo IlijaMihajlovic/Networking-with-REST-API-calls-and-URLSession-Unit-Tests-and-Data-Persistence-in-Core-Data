@@ -26,6 +26,7 @@ extension MainVC {
 
             do {
                guard let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {return}
+
                 let posts: [PostCore] = json.compactMap { [weak self] in
                     guard let strongSelf = self,
                     let userId = $0["userId"] as? Int32,
@@ -41,13 +42,15 @@ extension MainVC {
                     return post
                 }
                 print(posts)
-                self.courses = posts
-
                 completion(.success(posts))
 
+                self.courses = posts
+
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.persistence.save()
+                    //self.tableView.reloadData()
                 }
+
 
             } catch {
                 completion(.failure(.decodingError))

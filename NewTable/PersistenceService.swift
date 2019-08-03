@@ -37,11 +37,27 @@ class PersistenceService {
         if context.hasChanges {
             do {
                 try context.save()
+                //We are just notifaing when this just saves succsfully
+                NotificationCenter.default.post(name: NSNotification.Name("PersistedDataUpdated"), object: nil)
+                print("Saved Succssfully")
             } catch {
 
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+
+    func fetch<T: NSManagedObject>(_ type: T.Type, completion: @escaping ([T]) -> Void) {
+
+        let request = NSFetchRequest<T>(entityName: String(describing: type))
+
+        do {
+            let objects = try context.fetch(request)
+            completion(objects)
+        } catch {
+            print(error)
+            completion([])
         }
     }
 

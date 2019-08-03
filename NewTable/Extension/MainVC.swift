@@ -10,6 +10,8 @@ import UIKit
 
 final class MainVC: UITableViewController {
 
+    var courses: [PostCore] = []
+    let cellId = "cellId"
     let persistence = PersistenceService.shared
 
     lazy var getBarButton: UIButton = {
@@ -33,8 +35,6 @@ final class MainVC: UITableViewController {
         return button
     }()
 
-    var courses: [PostCore] = []
-    let cellId = "cellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,17 @@ final class MainVC: UITableViewController {
         configureNav()
         //addBarButtonItems()
 
-
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: getBarButton)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sendBarButton)
+
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { (_) in
+
+        }
+
+        persistence.fetch(PostCore.self) { [weak self] (posts) in
+            self?.courses = posts
+            self?.tableView.reloadData()
+        }
 
 
 
@@ -82,7 +89,7 @@ final class MainVC: UITableViewController {
         let url = "https://jsonplaceholder.typicode.com/posts"
         guard let urlString = URL(string: url) else { return }
 
-        fetchJSON(url: urlString) { (result) in
+        fetchJSON(url: urlString) {(result) in
 
             switch result {
             case .success(let posts):
