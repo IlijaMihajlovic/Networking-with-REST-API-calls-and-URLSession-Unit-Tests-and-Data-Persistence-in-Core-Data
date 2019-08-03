@@ -20,7 +20,7 @@ class PersistenceService {
 
     lazy var persistentContainer: NSPersistentContainer = {
 
-        let container = NSPersistentContainer(name: "coredra")
+        let container = NSPersistentContainer(name: "NewTable")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
 

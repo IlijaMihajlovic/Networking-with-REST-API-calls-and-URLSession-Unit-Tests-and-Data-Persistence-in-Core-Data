@@ -11,7 +11,7 @@ import Foundation
 extension MainVC {
 
     // MARK - Fetch JSON Data
-    func fetchJSON(url: URL, completion: @escaping (Result<[Post], NetworkError>) -> Void) {
+    func fetchJSON(url: URL, completion: @escaping (Result<[PostCore], NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) {(data, response, error) in
 
             guard let jsonData = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 || httpResponse.statusCode == 200, error == nil else {
@@ -25,7 +25,22 @@ extension MainVC {
             }
 
             do {
-                let posts = try JSONDecoder().decode([Post].self, from: jsonData)
+               guard let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {return}
+                let posts: [PostCore] = json.compactMap { [weak self] in
+                    guard let strongSelf = self,
+                    let userId = $0["userId"] as? Int32,
+                    let id =  $0["id"] as? Int32,
+                    let body = $0["body"] as? String,
+                    let title = $0["title"] as? String else {return nil}
+
+                    let post = PostCore(context: strongSelf.persistence.context)
+                    post.userId = userId
+                    post.id = id
+                    post.body = body
+                    post.title = title
+                    return post
+                }
+                print(posts)
                 self.courses = posts
 
                 completion(.success(posts))

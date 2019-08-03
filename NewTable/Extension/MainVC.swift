@@ -10,6 +10,8 @@ import UIKit
 
 final class MainVC: UITableViewController {
 
+    let persistence = PersistenceService.shared
+
     lazy var getBarButton: UIButton = {
         var button = UIButton(type: .system)
         button.setTitle("GET", for: .normal)
@@ -31,7 +33,7 @@ final class MainVC: UITableViewController {
         return button
     }()
 
-    var courses: [Post] = []
+    var courses: [PostCore] = []
     let cellId = "cellId"
 
     override func viewDidLoad() {
@@ -85,9 +87,10 @@ final class MainVC: UITableViewController {
             switch result {
             case .success(let posts):
 
-                posts.forEach({ (post) in
-                    print("JSON Data: \(post.body), \(post.title), \(post.userId)")
-                })
+
+               posts.forEach({ (post) in
+                   print("JSON Data: \(post.body), \(post.title), \(post.userId)")
+             })
 
             case .failure(let err):
                 print("Failed to fetch courses", err)
