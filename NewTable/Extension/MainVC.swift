@@ -10,6 +10,27 @@ import UIKit
 
 final class MainVC: UITableViewController {
 
+    lazy var getBarButton: UIButton = {
+        var button = UIButton(type: .system)
+        button.setTitle("GET", for: .normal)
+        //button.backgroundColor = UIColor.orange
+        button.addTarget(self, action: #selector(printJSONData), for: .touchUpInside)
+        button.frame = CGRect(x: 1, y: 0, width: 35, height: 35)
+
+        return button
+    }()
+
+    lazy var sendBarButton: UIButton = {
+        var button = UIButton(type: .system)
+        button.setTitle("SEND", for: .normal)
+        //button.backgroundColor = UIColor.orange
+        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
+
     var courses: [Post] = []
     let cellId = "cellId"
 
@@ -17,7 +38,15 @@ final class MainVC: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         configureNav()
-        addBarButtonItems()
+        //addBarButtonItems()
+
+
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: getBarButton)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sendBarButton)
+
+
+
     }
 
 

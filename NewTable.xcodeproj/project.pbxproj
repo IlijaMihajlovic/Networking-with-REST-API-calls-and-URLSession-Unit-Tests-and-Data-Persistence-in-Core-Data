@@ -13,6 +13,10 @@
 		2404B4BD22F36526000ABF57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2404B4BB22F36526000ABF57 /* LaunchScreen.storyboard */; };
 		2404B4C522F36589000ABF57 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4C422F36589000ABF57 /* MessageModel.swift */; };
 		2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4C622F36A7C000ABF57 /* NetworkError.swift */; };
+		2421B71022F5E6A200CF2A5F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2421B70E22F5E6A200CF2A5F /* CoreDataModel.xcdatamodeld */; };
+		2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73222F5E75A00CF2A5F /* PersistenceService.swift */; };
+		2421B73A22F5EA4600CF2A5F /* PostCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */; };
+		2421B73B22F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */; };
 		2465FF4422F43BD300944C34 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4322F43BD300944C34 /* Networking.swift */; };
 		2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */; };
 		2465FF4D22F4819200944C34 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4C22F4819200944C34 /* PostModel.swift */; };
@@ -28,6 +32,10 @@
 		2404B4BE22F36526000ABF57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2404B4C422F36589000ABF57 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		2404B4C622F36A7C000ABF57 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2421B70F22F5E6A200CF2A5F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		2421B73222F5E75A00CF2A5F /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2465FF4322F43BD300944C34 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVc+UITableView.swift"; sourceTree = "<group>"; };
 		2465FF4C22F4819200944C34 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -69,6 +77,8 @@
 				2465FF4922F43E2B00944C34 /* Model */,
 				240BC97F22F4A5100090DF6C /* Controller */,
 				2404B4B922F36526000ABF57 /* Assets.xcassets */,
+				2421B70E22F5E6A200CF2A5F /* CoreDataModel.xcdatamodeld */,
+				2421B73222F5E75A00CF2A5F /* PersistenceService.swift */,
 				2404B4BB22F36526000ABF57 /* LaunchScreen.storyboard */,
 				2404B4BE22F36526000ABF57 /* Info.plist */,
 			);
@@ -106,6 +116,8 @@
 		2465FF4922F43E2B00944C34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */,
+				2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */,
 				2404B4C422F36589000ABF57 /* MessageModel.swift */,
 				2465FF4C22F4819200944C34 /* PostModel.swift */,
 			);
@@ -183,10 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2404B4C522F36589000ABF57 /* MessageModel.swift in Sources */,
+				2421B73A22F5EA4600CF2A5F /* PostCore+CoreDataClass.swift in Sources */,
+				2421B73B22F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift in Sources */,
 				2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */,
 				2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */,
 				2404B4B522F36525000ABF57 /* MainVC.swift in Sources */,
 				2465FF4422F43BD300944C34 /* Networking.swift in Sources */,
+				2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */,
+				2421B71022F5E6A200CF2A5F /* CoreDataModel.xcdatamodeld in Sources */,
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
 				2465FF4D22F4819200944C34 /* PostModel.swift in Sources */,
 				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
@@ -379,6 +395,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2421B70E22F5E6A200CF2A5F /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2421B70F22F5E6A200CF2A5F /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 2421B70F22F5E6A200CF2A5F /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2404B4A722F36525000ABF57 /* Project object */;
 }

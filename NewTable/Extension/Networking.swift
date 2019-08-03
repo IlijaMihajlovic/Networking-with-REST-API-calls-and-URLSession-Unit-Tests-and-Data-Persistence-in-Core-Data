@@ -12,7 +12,7 @@ extension MainVC {
 
     // MARK - Fetch JSON Data
     func fetchJSON(url: URL, completion: @escaping (Result<[Post], NetworkError>) -> Void) {
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) {(data, response, error) in
 
             guard let jsonData = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 || httpResponse.statusCode == 200, error == nil else {
 
