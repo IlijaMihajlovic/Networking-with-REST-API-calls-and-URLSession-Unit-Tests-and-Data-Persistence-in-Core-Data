@@ -13,6 +13,7 @@ final class MainVC: UITableViewController {
     var courses: [PostCore] = []
     let cellId = "cellId"
     let persistence = PersistenceService.shared
+    static let shared = MainVC()
 
     lazy var getBarButton: UIButton = {
         var button = UIButton(type: .system)
@@ -48,10 +49,10 @@ final class MainVC: UITableViewController {
         NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { (_) in
 
         }
-
+        //Load the data from CoreData
         persistence.fetch(PostCore.self) { [weak self] (posts) in
             self?.courses = posts
-            self?.tableView.reloadData()
+            //self?.tableView.reloadData()
         }
 
 
@@ -96,7 +97,8 @@ final class MainVC: UITableViewController {
 
 
                posts.forEach({ (post) in
-                   print("JSON Data: \(post.body), \(post.title), \(post.userId)")
+//                   print("JSON Data: \(post.body), \(post.title), \(post.userId)")
+                print("json: \(post.userId)")
              })
 
             case .failure(let err):

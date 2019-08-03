@@ -24,15 +24,18 @@ extension MainVC {
                 return
             }
 
+            //Get some Data beck
             do {
-               guard let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {return}
+                guard let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {return}
 
                 let posts: [PostCore] = json.compactMap { [weak self] in
+
+                    //Since we're in a closure and we using weak self here we need to make sure we are unwraping our regular self
                     guard let strongSelf = self,
-                    let userId = $0["userId"] as? Int32,
-                    let id =  $0["id"] as? Int32,
-                    let body = $0["body"] as? String,
-                    let title = $0["title"] as? String else {return nil}
+                        let userId = $0["userId"] as? Int32,
+                        let id =  $0["id"] as? Int32,
+                        let body = $0["body"] as? String,
+                        let title = $0["title"] as? String else {return nil}
 
                     let post = PostCore(context: strongSelf.persistence.context)
                     post.userId = userId
@@ -46,9 +49,14 @@ extension MainVC {
 
                 self.courses = posts
 
+                //save data to core data
                 DispatchQueue.main.async {
+                    self.tableView.reloadData()
                     self.persistence.save()
+                        
+
                     //self.tableView.reloadData()
+
                 }
 
 

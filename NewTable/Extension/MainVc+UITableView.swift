@@ -31,7 +31,16 @@ extension MainVC {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let delete = deleteTableViewCellWithSwipeAction(at: indexPath)
+
+        //save data to core data
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.persistence.save()
+        }
+        
         return UISwipeActionsConfiguration(actions: [delete])
+
+
     }
 
 
