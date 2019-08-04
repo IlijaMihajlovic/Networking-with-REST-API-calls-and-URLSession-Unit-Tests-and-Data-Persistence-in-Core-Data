@@ -1,5 +1,7 @@
 # Networking-in-Swift-with-REST-API-calls-and-URLSession
-Project still in progress..Networking in Swift with REST API calls and URLSession. That puts the parsed JSON Data in an TableView and . This whole project is created completely programmatically without Storyboards and Interface Builder.
+Project still in progress..Networking in Swift with REST API calls and URLSession. That puts the parsed JSON Data in an TableView and persists the data using Core Data with CRUD (create, read, update, delete) so for example when the JSON data is parsed into the TableView we can easily delete the cell with a swipe, the TableView will then reload itself and Core Data will update and save the changes in realtime.
+
+This whole project is created completely programmatically without Storyboards and Interface Builder.
 
 ___
 ## Side Note
