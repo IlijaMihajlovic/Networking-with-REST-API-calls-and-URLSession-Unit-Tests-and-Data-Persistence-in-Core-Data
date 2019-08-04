@@ -2,7 +2,7 @@
 Project still in progress... Networking in Swift with REST API calls and URLSession, that puts the parsed JSON Data in a TableView and persists the data using Core Data with CRUD (create, read, update, and delete). So for example when the JSON data is parsed into the TableView we can easily delete the cell with a swipe, the TableView will then reload itself and Core Data will update and save the changes in realtime. There is also an option to send HTTP GET requests to the JSONPlaceholder server.
 
 This whole project is created completely programmatically without Storyboards and Interface Builder.
-[][
+
 ___
 ## Side Note
 * Currently, I do not have an iPhone, so I'm unable to test the app on a physical device. I apologize in advance for maybe possible bugs.
