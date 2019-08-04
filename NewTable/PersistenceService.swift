@@ -37,8 +37,9 @@ class PersistenceService {
         if context.hasChanges {
             do {
                 try context.save()
-                //We are just notifaing when this just saves succsfully
-                NotificationCenter.default.post(name: NSNotification.Name("PersistedDataUpdated"), object: nil)
+
+                //We get notified when it saves data successful
+                //NotificationCenter.default.post(name: NSNotification.Name("PersistedDataUpdated"), object: nil)
                 print("Saved Succssfully")
             } catch {
 

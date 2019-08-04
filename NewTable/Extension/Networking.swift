@@ -11,7 +11,7 @@ import Foundation
 extension MainVC {
 
     // MARK - Fetch JSON Data
-    func fetchJSON(url: URL, completion: @escaping (Result<[PostCore], NetworkError>) -> Void) {
+    func fetchJSON(url: URL, completion: @escaping (Result<[PostModelObject], NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) {(data, response, error) in
 
             guard let jsonData = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 || httpResponse.statusCode == 200, error == nil else {
@@ -24,41 +24,34 @@ extension MainVC {
                 return
             }
 
-            //Get some Data beck
+            //MARK: - Get Data Back
             do {
                 guard let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {return}
 
-                let posts: [PostCore] = json.compactMap { [weak self] in
+                let posts: [PostModelObject] = json.compactMap { [weak self] in
 
-                    //Since we're in a closure and we using weak self here we need to make sure we are unwraping our regular self
+                //Since we're in a closure and we using weak self here so we need to make sure we are unwrapping our regular self
                     guard let strongSelf = self,
                         let userId = $0["userId"] as? Int32,
                         let id =  $0["id"] as? Int32,
                         let body = $0["body"] as? String,
-                        let title = $0["title"] as? String else {return nil}
+                        let title = $0["title"] as? String else { return nil }
 
-                    let post = PostCore(context: strongSelf.persistence.context)
+                    let post = PostModelObject(context: strongSelf.persistence.context)
                     post.userId = userId
                     post.id = id
                     post.body = body
                     post.title = title
                     return post
                 }
-                print(posts)
                 completion(.success(posts))
+                self.postsArray = posts
 
-                self.courses = posts
-
-                //save data to core data
+                //MARK: - Save Data To Core Data
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     self.persistence.save()
-                        
-
-                    //self.tableView.reloadData()
-
                 }
-
 
             } catch {
                 completion(.failure(.decodingError))

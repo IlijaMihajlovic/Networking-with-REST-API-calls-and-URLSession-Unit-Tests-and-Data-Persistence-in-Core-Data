@@ -10,30 +10,25 @@ import UIKit
 
 final class MainVC: UITableViewController {
 
-    var courses: [PostCore] = []
+    var postsArray: [PostModelObject] = []
     let cellId = "cellId"
 
     let persistence = PersistenceService.shared
-    //static let shared = MainVC()
-
+    
     lazy var getBarButton: UIButton = {
         var button = UIButton(type: .system)
         button.setTitle("GET", for: .normal)
-        //button.backgroundColor = UIColor.orange
         button.addTarget(self, action: #selector(printJSONData), for: .touchUpInside)
         button.frame = CGRect(x: 1, y: 0, width: 35, height: 35)
-
         return button
     }()
 
     lazy var sendBarButton: UIButton = {
         var button = UIButton(type: .system)
         button.setTitle("SEND", for: .normal)
-        //button.backgroundColor = UIColor.orange
         button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         button.translatesAutoresizingMaskIntoConstraints = false
-
         return button
     }()
 
@@ -42,21 +37,22 @@ final class MainVC: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         configureNav()
+        addBarrButtonItems()
 
+//        NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { (_) in
+//        }
+
+        //Load data from Core Data
+        self.persistence.fetch(PostModelObject.self) { [weak self] (posts) in
+            self?.postsArray = posts
+        }
+
+    }
+
+
+    fileprivate func addBarrButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: getBarButton)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sendBarButton)
-
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { (_) in
-
-        }
-        //Load data from CoreData
-        persistence.fetch(PostCore.self) { [weak self] (posts) in
-            self?.courses = posts
-
-        }
-
-
-
     }
 
     
@@ -67,7 +63,7 @@ final class MainVC: UITableViewController {
 
     func deleteTableViewCellWithSwipeAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            self.courses.remove(at: indexPath.row)
+            self.postsArray.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
@@ -84,11 +80,8 @@ final class MainVC: UITableViewController {
 
             switch result {
             case .success(let posts):
-
-
                posts.forEach({ (post) in
-//                   print("JSON Data: \(post.body), \(post.title), \(post.userId)")
-                print("json: \(post.userId)")
+                   print("JSON Data: \(post.body), \(post.title), \(post.userId)")
              })
 
             case .failure(let err):

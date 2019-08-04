@@ -12,7 +12,7 @@ extension MainVC {
 
      //MARK: - UITableView DataSource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return courses.count
+        return postsArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -20,9 +20,9 @@ extension MainVC {
        // let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: cellId)
 
-        let course = courses[indexPath.row]
+        let course = postsArray[indexPath.row]
         cell.textLabel?.text = course.body
-        cell.detailTextLabel?.text = course.title
+        cell.detailTextLabel?.text = String(course.userId)
 
         return cell
     }
@@ -32,14 +32,13 @@ extension MainVC {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
 
-            let task = courses.remove(at: indexPath.row)
+            let task = postsArray.remove(at: indexPath.row)
 
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
             PersistenceService.shared.delete(task)
             tableView.endUpdates()
             PersistenceService.shared.save()
-
 
             DispatchQueue.main.async {
                 tableView.reloadData()

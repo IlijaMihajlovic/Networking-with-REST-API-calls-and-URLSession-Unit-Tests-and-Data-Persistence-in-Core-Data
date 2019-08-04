@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2400A48222F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400A48022F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift */; };
+		2400A48322F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400A48122F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift */; };
+		2400A48522F7044B0035B8CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400A48422F7044B0035B8CC /* Constants.swift */; };
 		2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4B222F36525000ABF57 /* AppDelegate.swift */; };
 		2404B4B522F36525000ABF57 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4B422F36525000ABF57 /* MainVC.swift */; };
 		2404B4BA22F36526000ABF57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2404B4B922F36526000ABF57 /* Assets.xcassets */; };
@@ -15,14 +18,15 @@
 		2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4C622F36A7C000ABF57 /* NetworkError.swift */; };
 		2421B71022F5E6A200CF2A5F /* NewTable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2421B70E22F5E6A200CF2A5F /* NewTable.xcdatamodeld */; };
 		2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73222F5E75A00CF2A5F /* PersistenceService.swift */; };
-		2421B73A22F5EA4600CF2A5F /* PostCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */; };
-		2421B73B22F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */; };
 		2465FF4422F43BD300944C34 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4322F43BD300944C34 /* Networking.swift */; };
 		2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */; };
 		2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4E22F484CB00944C34 /* StringExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2400A48022F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostModelObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2400A48122F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostModelObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2400A48422F7044B0035B8CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2404B4AF22F36525000ABF57 /* NewTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2404B4B222F36525000ABF57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2404B4B422F36525000ABF57 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -33,8 +37,6 @@
 		2404B4C622F36A7C000ABF57 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2421B70F22F5E6A200CF2A5F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		2421B73222F5E75A00CF2A5F /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
-		2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostCore+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2465FF4322F43BD300944C34 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVc+UITableView.swift"; sourceTree = "<group>"; };
 		2465FF4E22F484CB00944C34 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
@@ -54,8 +56,8 @@
 		2400A47F22F6F1510035B8CC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */,
-				2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */,
+				2400A48022F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift */,
+				2400A48122F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift */,
 				2421B70E22F5E6A200CF2A5F /* NewTable.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -97,6 +99,7 @@
 			children = (
 				2404B4B422F36525000ABF57 /* MainVC.swift */,
 				2404B4B222F36525000ABF57 /* AppDelegate.swift */,
+				2400A48422F7044B0035B8CC /* Constants.swift */,
 			);
 			name = Controller;
 			path = Extension;
@@ -200,16 +203,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2404B4C522F36589000ABF57 /* MessageModel.swift in Sources */,
-				2421B73A22F5EA4600CF2A5F /* PostCore+CoreDataClass.swift in Sources */,
-				2421B73B22F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift in Sources */,
 				2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */,
 				2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */,
+				2400A48322F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift in Sources */,
 				2404B4B522F36525000ABF57 /* MainVC.swift in Sources */,
+				2400A48222F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift in Sources */,
 				2465FF4422F43BD300944C34 /* Networking.swift in Sources */,
 				2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */,
 				2421B71022F5E6A200CF2A5F /* NewTable.xcdatamodeld in Sources */,
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
 				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
+				2400A48522F7044B0035B8CC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
