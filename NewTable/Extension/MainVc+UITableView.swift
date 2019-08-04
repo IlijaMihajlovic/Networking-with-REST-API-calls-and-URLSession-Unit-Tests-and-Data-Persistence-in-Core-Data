@@ -27,21 +27,23 @@ extension MainVC {
         return cell
     }
 
-    //MARK: UITableView Delegate Method
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-        let delete = deleteTableViewCellWithSwipeAction(at: indexPath)
+    //Save Data to Core Data when right-swipe to delete
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
 
-        //save data to core data
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.persistence.save()
+            let task = courses.remove(at: indexPath.row)
+
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            PersistenceService.shared.delete(task)
+            tableView.endUpdates()
+            PersistenceService.shared.save()
+
+
+            DispatchQueue.main.async {
+                tableView.reloadData()
+            }
         }
-        
-        return UISwipeActionsConfiguration(actions: [delete])
-
-
     }
-
-
 }

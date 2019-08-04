@@ -12,8 +12,9 @@ final class MainVC: UITableViewController {
 
     var courses: [PostCore] = []
     let cellId = "cellId"
+
     let persistence = PersistenceService.shared
-    static let shared = MainVC()
+    //static let shared = MainVC()
 
     lazy var getBarButton: UIButton = {
         var button = UIButton(type: .system)
@@ -41,7 +42,6 @@ final class MainVC: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         configureNav()
-        //addBarButtonItems()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: getBarButton)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sendBarButton)
@@ -49,24 +49,14 @@ final class MainVC: UITableViewController {
         NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { (_) in
 
         }
-        //Load the data from CoreData
+        //Load data from CoreData
         persistence.fetch(PostCore.self) { [weak self] (posts) in
             self?.courses = posts
-            //self?.tableView.reloadData()
+
         }
 
 
 
-    }
-
-
-    fileprivate func addBarButtonItems() {
-        let getButton = UIBarButtonItem(title: "GET", style: .plain, target: self, action: #selector(printJSONData))
-        getButton.tintColor = .orange
-
-        let sendButton = UIBarButtonItem(title: "SEND", style: .done, target: self, action: #selector(sendMessage))
-        sendButton.tintColor = .purple
-        navigationItem.rightBarButtonItems = [getButton, sendButton]
     }
 
     

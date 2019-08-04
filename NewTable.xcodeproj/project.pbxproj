@@ -19,7 +19,6 @@
 		2421B73B22F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */; };
 		2465FF4422F43BD300944C34 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4322F43BD300944C34 /* Networking.swift */; };
 		2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */; };
-		2465FF4D22F4819200944C34 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4C22F4819200944C34 /* PostModel.swift */; };
 		2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4E22F484CB00944C34 /* StringExt.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2465FF4322F43BD300944C34 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVc+UITableView.swift"; sourceTree = "<group>"; };
-		2465FF4C22F4819200944C34 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		2465FF4E22F484CB00944C34 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2400A47F22F6F1510035B8CC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */,
+				2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */,
+				2421B70E22F5E6A200CF2A5F /* NewTable.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		2404B4A622F36525000ABF57 = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +85,6 @@
 				2465FF4922F43E2B00944C34 /* Model */,
 				240BC97F22F4A5100090DF6C /* Controller */,
 				2404B4B922F36526000ABF57 /* Assets.xcassets */,
-				2421B70E22F5E6A200CF2A5F /* NewTable.xcdatamodeld */,
 				2421B73222F5E75A00CF2A5F /* PersistenceService.swift */,
 				2404B4BB22F36526000ABF57 /* LaunchScreen.storyboard */,
 				2404B4BE22F36526000ABF57 /* Info.plist */,
@@ -116,10 +123,8 @@
 		2465FF4922F43E2B00944C34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2421B73822F5EA4600CF2A5F /* PostCore+CoreDataClass.swift */,
-				2421B73922F5EA4600CF2A5F /* PostCore+CoreDataProperties.swift */,
+				2400A47F22F6F1510035B8CC /* CoreData */,
 				2404B4C422F36589000ABF57 /* MessageModel.swift */,
-				2465FF4C22F4819200944C34 /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,7 +209,6 @@
 				2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */,
 				2421B71022F5E6A200CF2A5F /* NewTable.xcdatamodeld in Sources */,
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
-				2465FF4D22F4819200944C34 /* PostModel.swift in Sources */,
 				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
