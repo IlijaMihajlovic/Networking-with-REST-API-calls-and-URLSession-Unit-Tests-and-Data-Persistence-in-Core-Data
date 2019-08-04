@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2400A48222F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400A48022F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift */; };
 		2400A48322F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400A48122F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift */; };
-		2400A48522F7044B0035B8CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400A48422F7044B0035B8CC /* Constants.swift */; };
 		2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4B222F36525000ABF57 /* AppDelegate.swift */; };
 		2404B4B522F36525000ABF57 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4B422F36525000ABF57 /* MainVC.swift */; };
 		2404B4BA22F36526000ABF57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2404B4B922F36526000ABF57 /* Assets.xcassets */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		2400A48022F6FF6D0035B8CC /* PostModelObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostModelObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2400A48122F6FF6D0035B8CC /* PostModelObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostModelObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2400A48422F7044B0035B8CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2404B4AF22F36525000ABF57 /* NewTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2404B4B222F36525000ABF57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2404B4B422F36525000ABF57 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -86,10 +84,10 @@
 				2465FF4522F43BDB00944C34 /* Extension */,
 				2465FF4922F43E2B00944C34 /* Model */,
 				240BC97F22F4A5100090DF6C /* Controller */,
-				2404B4B922F36526000ABF57 /* Assets.xcassets */,
-				2421B73222F5E75A00CF2A5F /* PersistenceService.swift */,
-				2404B4BB22F36526000ABF57 /* LaunchScreen.storyboard */,
-				2404B4BE22F36526000ABF57 /* Info.plist */,
+				241FCEC522F73EAD007E42C7 /* Helper */,
+				241FCEC622F73EEF007E42C7 /* Interface Builder */,
+				241FCEC722F73EFC007E42C7 /* Resources */,
+				241FCEC822F73F0B007E42C7 /* Supporting Files */,
 			);
 			path = NewTable;
 			sourceTree = "<group>";
@@ -99,10 +97,41 @@
 			children = (
 				2404B4B422F36525000ABF57 /* MainVC.swift */,
 				2404B4B222F36525000ABF57 /* AppDelegate.swift */,
-				2400A48422F7044B0035B8CC /* Constants.swift */,
 			);
 			name = Controller;
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		241FCEC522F73EAD007E42C7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2421B73222F5E75A00CF2A5F /* PersistenceService.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		241FCEC622F73EEF007E42C7 /* Interface Builder */ = {
+			isa = PBXGroup;
+			children = (
+				2404B4BB22F36526000ABF57 /* LaunchScreen.storyboard */,
+			);
+			path = "Interface Builder";
+			sourceTree = "<group>";
+		};
+		241FCEC722F73EFC007E42C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2404B4B922F36526000ABF57 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		241FCEC822F73F0B007E42C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2404B4BE22F36526000ABF57 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2465FF4522F43BDB00944C34 /* Extension */ = {
@@ -213,7 +242,6 @@
 				2421B71022F5E6A200CF2A5F /* NewTable.xcdatamodeld in Sources */,
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
 				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
-				2400A48522F7044B0035B8CC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewTable/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NewTable/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,7 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewTable/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NewTable/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
