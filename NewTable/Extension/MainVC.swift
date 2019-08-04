@@ -11,9 +11,8 @@ import UIKit
 final class MainVC: UITableViewController {
 
     var postsArray: [PostModelObject] = []
-    let cellId = "cellId"
-
     let persistence = PersistenceService.shared
+    let cellId = "cellId"
     
     lazy var getBarButton: UIButton = {
         var button = UIButton(type: .system)
@@ -46,7 +45,6 @@ final class MainVC: UITableViewController {
         self.persistence.fetch(PostModelObject.self) { [weak self] (posts) in
             self?.postsArray = posts
         }
-
     }
 
 
@@ -59,16 +57,6 @@ final class MainVC: UITableViewController {
     fileprivate func configureNav() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Course List"
-    }
-
-    func deleteTableViewCellWithSwipeAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            self.postsArray.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            completion(true)
-        }
-        action.backgroundColor = .orange
-        return action
     }
 
 
