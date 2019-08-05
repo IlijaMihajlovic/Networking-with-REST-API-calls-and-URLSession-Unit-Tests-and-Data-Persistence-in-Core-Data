@@ -6,7 +6,6 @@
 //  Copyright © 2019 Ilija Mihajlovic. All rights reserved.
 //
 
-
 import UIKit
 
 final class MainVC: UITableViewController {
