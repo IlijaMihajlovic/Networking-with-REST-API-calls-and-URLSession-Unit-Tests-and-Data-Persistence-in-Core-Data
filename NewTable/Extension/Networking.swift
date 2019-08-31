@@ -47,9 +47,9 @@ extension MainVC {
                 completion(.success(posts))
                 self.postsArray = posts
 
-                //MARK: - Save Data To Core Data
+                //MARK: - Save Data To Core Data & Animate Reloading of the TableView
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                self.animateTableViewWhileReloading()
                     self.persistence.save()
                 }
 
@@ -100,7 +100,7 @@ extension MainVC {
 
                     //this was successful so we can pass along our message data object
                     completion(.success(messageData))
-                    //print("Awsome \(messageData.userId), \(messageData.title)")
+                    print("Awsome \(messageData.userId), \(messageData.title)")
 
 
                 } catch {

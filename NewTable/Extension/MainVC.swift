@@ -58,18 +58,23 @@ final class MainVC: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Course List"
     }
-
-
+    
+    func animateTableViewWhileReloading() {
+        UIView.transition(with: tableView,duration:0.27,options:.transitionCrossDissolve,animations: { () -> Void in
+            self.tableView.reloadData()
+        }, completion: nil)
+    }
+    
     @objc fileprivate func printJSONData() {
         let url = "https://jsonplaceholder.typicode.com/posts"
         guard let urlString = URL(string: url) else { return }
 
-        fetchJSON(url: urlString) {(result) in
+        self.fetchJSON(url: urlString) {(result) in
 
             switch result {
             case .success(let posts):
                posts.forEach({ (post) in
-                   print("JSON Data: \(post.body), \(post.title), \(post.userId)")
+                   print("JSON Data: \(post.title), \(post.userId)")
              })
 
             case .failure(let err):
