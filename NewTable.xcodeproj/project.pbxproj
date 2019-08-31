@@ -21,6 +21,7 @@
 		2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */; };
 		2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4E22F484CB00944C34 /* StringExt.swift */; };
 		24CECB9122F8856B00831255 /* NewTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CECB8622F884F300831255 /* NewTableTests.swift */; };
+		24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA402231A8E8900E57293 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		24CECB8422F884F300831255 /* NewTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CECB8622F884F300831255 /* NewTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableTests.swift; sourceTree = "<group>"; };
 		24CECB8822F884F300831255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24DDA402231A8E8900E57293 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		2404B4B122F36525000ABF57 /* NewTable */ = {
 			isa = PBXGroup;
 			children = (
+				24DDA401231A8E7200E57293 /* View */,
 				2465FF4822F43E2000944C34 /* Enum */,
 				2465FF4522F43BDB00944C34 /* Extension */,
 				2465FF4922F43E2B00944C34 /* Model */,
@@ -191,6 +194,14 @@
 				24CECB8822F884F300831255 /* Info.plist */,
 			);
 			path = NewTableTests;
+			sourceTree = "<group>";
+		};
+		24DDA401231A8E7200E57293 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24DDA402231A8E8900E57293 /* CustomCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */,
 				2421B71022F5E6A200CF2A5F /* NewTable.xcdatamodeld in Sources */,
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
+				24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */,
 				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

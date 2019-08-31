@@ -34,7 +34,7 @@ final class MainVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
         configureNav()
         addBarrButtonItems()
 

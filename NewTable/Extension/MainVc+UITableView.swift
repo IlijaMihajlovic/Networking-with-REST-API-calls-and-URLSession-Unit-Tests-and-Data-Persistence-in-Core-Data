@@ -17,8 +17,8 @@ extension MainVC {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-       // let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: cellId)
+       let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomCell
+     
 
         let course = postsArray[indexPath.row]
         cell.textLabel?.text = course.body
