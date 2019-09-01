@@ -14,8 +14,9 @@ final class MainVC: UITableViewController {
     let persistence = PersistenceService.shared
     let cellId = "cellId"
     
+    
     lazy var getBarButton: UIButton = {
-        var button = UIButton(type: .system)
+        let button = UIButton(type: .system)
         button.setTitle("GET", for: .normal)
         button.addTarget(self, action: #selector(printJSONData), for: .touchUpInside)
         button.frame = CGRect(x: 1, y: 0, width: 35, height: 35)
@@ -23,7 +24,7 @@ final class MainVC: UITableViewController {
     }()
 
     lazy var sendBarButton: UIButton = {
-        var button = UIButton(type: .system)
+        let button = UIButton(type: .system)
         button.setTitle("SEND", for: .normal)
         button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
@@ -46,6 +47,7 @@ final class MainVC: UITableViewController {
             self?.postsArray = posts
         }
     }
+
 
 
     fileprivate func addBarrButtonItems() {

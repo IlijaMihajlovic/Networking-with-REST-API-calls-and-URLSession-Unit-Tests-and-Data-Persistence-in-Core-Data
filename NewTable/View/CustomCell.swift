@@ -10,6 +10,12 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     
+    let messageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Title: "
@@ -17,10 +23,19 @@ class CustomCell: UITableViewCell {
         return label
     }()
     
+    let userId: UILabel = {
+        let label = UILabel()
+        label.text = "ID: "
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViewToSubView()
         addConstraints()
+       
     }
 
     
@@ -29,14 +44,18 @@ class CustomCell: UITableViewCell {
     }
     
     fileprivate func addConstraints() {
-        titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 4).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 4).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
-        titleLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        titleLabel.anchor(top: topAnchor, bottom: nil, leading: leadingAnchor, trailing: messageLabel.leadingAnchor, padding: .init(top: 5, left: 10, bottom: 0, right: 0 ))
+
+        messageLabel.anchor(top: titleLabel.topAnchor, bottom: bottomAnchor, leading: titleLabel.leadingAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 60, bottom: 10, right: 0))
+        
+        userId.anchor(top: nil, bottom: messageLabel.bottomAnchor, leading: titleLabel.leadingAnchor, trailing: messageLabel.leadingAnchor)
     }
     
+    
+    
     fileprivate func addViewToSubView() {
-        addSubview(titleLabel)
+        [titleLabel, messageLabel, userId].forEach{addSubview($0)}
+        
     }
 }
 

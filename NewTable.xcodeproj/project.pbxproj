@@ -22,6 +22,7 @@
 		2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4E22F484CB00944C34 /* StringExt.swift */; };
 		24CECB9122F8856B00831255 /* NewTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CECB8622F884F300831255 /* NewTableTests.swift */; };
 		24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA402231A8E8900E57293 /* CustomCell.swift */; };
+		24DDA409231A94ED00E57293 /* AutoLayoutAnchorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		24CECB8622F884F300831255 /* NewTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableTests.swift; sourceTree = "<group>"; };
 		24CECB8822F884F300831255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24DDA402231A8E8900E57293 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutAnchorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				2465FF4322F43BD300944C34 /* Networking.swift */,
 				2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */,
 				2465FF4E22F484CB00944C34 /* StringExt.swift */,
+				24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
 				24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */,
 				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
+				24DDA409231A94ED00E57293 /* AutoLayoutAnchorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

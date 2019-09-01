@@ -19,14 +19,15 @@ extension MainVC {
 
        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomCell
      
-
         let course = postsArray[indexPath.row]
-        cell.textLabel?.text = course.body
-        cell.detailTextLabel?.text = String(course.userId)
+        cell.messageLabel.text = course.body
+        cell.messageLabel.numberOfLines = 0
+        cell.messageLabel.lineBreakMode = .byWordWrapping
+        cell.userId.text = "ID: \(course.id)"
 
         return cell
     }
-
+    
 
     //Save Data to Core Data when right-swipe to delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -45,5 +46,8 @@ extension MainVC {
             }
         }
     }
+    
+
 }
+
 
