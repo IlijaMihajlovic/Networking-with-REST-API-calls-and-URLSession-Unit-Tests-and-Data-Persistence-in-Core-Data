@@ -43,6 +43,7 @@ class CustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Constraints
     fileprivate func addConstraints() {
         titleLabel.anchor(top: topAnchor, bottom: nil, leading: leadingAnchor, trailing: messageLabel.leadingAnchor, padding: .init(top: 5, left: 10, bottom: 0, right: 0 ))
 
