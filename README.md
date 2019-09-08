@@ -1,4 +1,9 @@
 # Networking-with-REST-API-calls-and-URLSession,Unit-Tests-and-Data-Persistence-in-Core-Data
+
+![platform-ios](https://img.shields.io/badge/platform-ios-Blue.svg)
+![swift-version](https://img.shields.io/badge/swift-4.2-Orange.svg)
+![lisence](https://img.shields.io/badge/license-MIT-Lightgrey.svg)
+
 Project still in work... Networking in Swift with REST API calls and URLSession, that puts the parsed JSON Data in a TableView and persists the data using Core Data with CRUD (create, read, update, and delete). I used also Unit Tests to test URLSession asynchronous network operations and make the project as robust as possible. When the JSON data is parsed into the dynamic TableView cell we can easily delete the cell with a swipe, the TableView will then reload itself with a custom made animation and Core Data will update and save the changes in realtime. There is also an option to send HTTP GET requests to the JSONPlaceholder server.
 
 This whole project is created completely programmatically without Storyboards and Interface Builder.
