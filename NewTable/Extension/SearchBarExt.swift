@@ -14,7 +14,11 @@ extension HomeController: UISearchBarDelegate{
         showSearchBar(shouldShow: false)
         searchBar.text = ""
         isSearching = false
-        animateTableViewWhileReloading()
+        
+        if isSearching  {
+            animateTableViewWhileReloading()
+        }
+       
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -29,7 +33,7 @@ extension HomeController: UISearchBarDelegate{
     }
     
     
-    fileprivate func animateTableViewWhileReloading() {
+    func animateTableViewWhileReloading() {
         UIView.transition(with: tableView,duration:0.27,options:.transitionCrossDissolve,animations: { () -> Void in
             DispatchQueue.main.async {
                 self.tableView.reloadData()

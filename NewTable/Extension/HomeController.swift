@@ -28,26 +28,27 @@ final class HomeController: UITableViewController {
         let button = UIButton(type: .system)
         button.setTitle("Sort", for: .normal)
         button.addTarget(self, action: #selector(sortTableViewbyUsername), for: .touchUpInside)
-        button.frame = CGRect(x: 1, y: 0, width: 35, height: 35)
+        button.frame = CGRect(x: 1, y: 0, width: 45, height: 45)
         return button
     }()
     
     lazy var sendBarButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("SEND", for: .normal)
+        button.setTitle("Send", for: .normal)
         button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        button.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        showSearchBarButtonItem(shouldShow: true)
+        showBarButtonItems(shouldShow: true)
         configureNav()
-        addBarrButtonItem()
         checkJSONDataForPossibleErrors()
         
         //Load data from Core Data
@@ -78,25 +79,25 @@ final class HomeController: UITableViewController {
            searchBar.delegate = self
        }
     
-    fileprivate func showSearchBarButtonItem(shouldShow: Bool) {
+    fileprivate func showBarButtonItems(shouldShow: Bool) {
         if shouldShow {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleShowSearchBar))
+            
+               navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: sendBarButton), UIBarButtonItem(customView: sortBarButton)]
+            
         } else {
-            navigationItem.rightBarButtonItem = nil
+            navigationItem.rightBarButtonItems = nil
+            navigationItem.leftBarButtonItems = nil
+
         }
     }
     
     func showSearchBar(shouldShow: Bool) {
            //If the search bar is shown then disable the bar button item(the opposite of the argument shouldShow)
-           showSearchBarButtonItem(shouldShow: !shouldShow)
+           showBarButtonItems(shouldShow: !shouldShow)
            searchBar.showsCancelButton = shouldShow
            navigationItem.titleView = shouldShow ? searchBar: nil
        }
-    
-    fileprivate func addBarrButtonItem() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sendBarButton)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sortBarButton)
-    }
     
     @objc fileprivate func sortTableViewbyUsername() {
         incomingDataArray.sort { $0.username < $1.username } //sort username by ascending order
@@ -104,7 +105,7 @@ final class HomeController: UITableViewController {
     }
     
     fileprivate func configureNav() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Users"
     }
     

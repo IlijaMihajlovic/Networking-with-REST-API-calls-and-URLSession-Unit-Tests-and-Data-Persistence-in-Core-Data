@@ -87,8 +87,8 @@ extension HomeController {
 
     //Save Data to Core Data when right-swipe to delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == UITableViewCell.EditingStyle.delete {
-
             let task = incomingDataArray.remove(at: indexPath.row)
 
             tableView.beginUpdates()
