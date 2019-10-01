@@ -34,7 +34,7 @@ struct Networking {
                 let decoder = JSONDecoder.init(context: PersistenceService.shared.persistentContainer.viewContext)
                 
                 let data = try decoder.decode([User].self, from: jsonData)
-                HomeController.shared.usersArray = data
+                HomeController.shared.incomingDataArray = data
                 
                 let users = User(context: PersistenceService.shared.persistentContainer.viewContext)
                 
@@ -49,7 +49,7 @@ struct Networking {
                 }
                 
                 completion(.success(data))
-                HomeController.shared.usersArray = data
+                HomeController.shared.incomingDataArray = data
                 
                 data.forEach { (user) in
                     // print("City: \(user.address.geo.lng)")

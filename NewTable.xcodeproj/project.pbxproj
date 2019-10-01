@@ -34,6 +34,13 @@
 		24EA63BC23435FBB00DA3917 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA63BB23435FBB00DA3917 /* CustomColor.swift */; };
 		24EA63BE23435FC000DA3917 /* SetRadiusExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA63BD23435FC000DA3917 /* SetRadiusExt.swift */; };
 		24EA63C0234361B300DA3917 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA63BF234361B300DA3917 /* ImageService.swift */; };
+		24F3CD4A2343AA0600C71363 /* SearchBarExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3CD492343AA0600C71363 /* SearchBarExt.swift */; };
+		24F3CD4C2343AA8800C71363 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3CD4B2343AA8800C71363 /* MainTabBarController.swift */; };
+		24F3CD4E2343AB2A00C71363 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3CD4D2343AB2A00C71363 /* MapController.swift */; };
+		24F3CD502343ABA900C71363 /* JSONGeoModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3CD4F2343ABA900C71363 /* JSONGeoModelData.swift */; };
+		24F3CD522343ACEA00C71363 /* UITableViewDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3CD512343ACEA00C71363 /* UITableViewDelegateMethods.swift */; };
+		24F3CD542343ACF900C71363 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3CD532343ACF900C71363 /* DetailVC.swift */; };
+		24F3CD562343AD2800C71363 /* MapControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3CD552343AD2800C71363 /* MapControllerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +85,13 @@
 		24EA63BB23435FBB00DA3917 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		24EA63BD23435FC000DA3917 /* SetRadiusExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRadiusExt.swift; sourceTree = "<group>"; };
 		24EA63BF234361B300DA3917 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		24F3CD492343AA0600C71363 /* SearchBarExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarExt.swift; sourceTree = "<group>"; };
+		24F3CD4B2343AA8800C71363 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		24F3CD4D2343AB2A00C71363 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		24F3CD4F2343ABA900C71363 /* JSONGeoModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONGeoModelData.swift; sourceTree = "<group>"; };
+		24F3CD512343ACEA00C71363 /* UITableViewDelegateMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewDelegateMethods.swift; sourceTree = "<group>"; };
+		24F3CD532343ACF900C71363 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		24F3CD552343AD2800C71363 /* MapControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapControllerExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +159,9 @@
 			children = (
 				2404B4B422F36525000ABF57 /* HomeController.swift */,
 				2404B4B222F36525000ABF57 /* AppDelegate.swift */,
+				24F3CD4D2343AB2A00C71363 /* MapController.swift */,
+				24F3CD4B2343AA8800C71363 /* MainTabBarController.swift */,
+				24F3CD532343ACF900C71363 /* DetailVC.swift */,
 			);
 			name = Controller;
 			path = Extension;
@@ -190,9 +207,12 @@
 			children = (
 				24EA63BA23435FA100DA3917 /* Services */,
 				2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */,
+				24F3CD512343ACEA00C71363 /* UITableViewDelegateMethods.swift */,
+				24F3CD492343AA0600C71363 /* SearchBarExt.swift */,
 				2465FF4E22F484CB00944C34 /* StringExt.swift */,
 				24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */,
 				24EA63952343492900DA3917 /* JSONDecoder&CodingKeys.swift */,
+				24F3CD552343AD2800C71363 /* MapControllerExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -210,6 +230,7 @@
 			children = (
 				2400A47F22F6F1510035B8CC /* CoreData */,
 				24EA63A7234355B600DA3917 /* NewTable.xcdatamodeld */,
+				24F3CD4F2343ABA900C71363 /* JSONGeoModelData.swift */,
 				2404B4C422F36589000ABF57 /* MessageModel.swift */,
 			);
 			path = Model;
@@ -357,8 +378,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2404B4C522F36589000ABF57 /* MessageModel.swift in Sources */,
+				24F3CD502343ABA900C71363 /* JSONGeoModelData.swift in Sources */,
+				24F3CD522343ACEA00C71363 /* UITableViewDelegateMethods.swift in Sources */,
 				24EA63B4234355D100DA3917 /* Company+CoreDataClass.swift in Sources */,
 				24EA63BC23435FBB00DA3917 /* CustomColor.swift in Sources */,
+				24F3CD542343ACF900C71363 /* DetailVC.swift in Sources */,
 				2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */,
 				2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */,
 				24EA63A9234355B600DA3917 /* NewTable.xcdatamodeld in Sources */,
@@ -371,14 +395,18 @@
 				24EA63B6234355D100DA3917 /* Address+CoreDataClass.swift in Sources */,
 				24EA63B3234355D100DA3917 /* Geo+CoreDataProperties.swift in Sources */,
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
+				24F3CD562343AD2800C71363 /* MapControllerExt.swift in Sources */,
 				24EA63B8234355D100DA3917 /* User+CoreDataClass.swift in Sources */,
 				24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */,
 				24EA63C0234361B300DA3917 /* ImageService.swift in Sources */,
 				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
 				24EA63B9234355D100DA3917 /* User+CoreDataProperties.swift in Sources */,
+				24F3CD4C2343AA8800C71363 /* MainTabBarController.swift in Sources */,
 				24EA63BE23435FC000DA3917 /* SetRadiusExt.swift in Sources */,
+				24F3CD4A2343AA0600C71363 /* SearchBarExt.swift in Sources */,
 				24DDA409231A94ED00E57293 /* AutoLayoutAnchorExtension.swift in Sources */,
 				24EA63962343492900DA3917 /* JSONDecoder&CodingKeys.swift in Sources */,
+				24F3CD4E2343AB2A00C71363 /* MapController.swift in Sources */,
 				24EA63932343485500DA3917 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,8 +12,25 @@ final class HomeController: UITableViewController {
     
     //Singleton
     static let shared = HomeController()
-    var usersArray: [User] = []
-    let cellId = "cellId"
+    
+    //MARK: - Properties
+    var isSearching = false
+    var incomingDataArray = [User]()
+    var filterdArray = [User]()
+    
+    lazy fileprivate var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        return searchBar
+    }()
+    
+    lazy fileprivate var sortBarButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sort", for: .normal)
+        button.addTarget(self, action: #selector(sortTableViewbyUsername), for: .touchUpInside)
+        button.frame = CGRect(x: 1, y: 0, width: 35, height: 35)
+        return button
+    }()
     
     lazy var sendBarButton: UIButton = {
         let button = UIButton(type: .system)
@@ -24,20 +41,28 @@ final class HomeController: UITableViewController {
         return button
     }()
     
-    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
+        setupTableView()
+        showSearchBarButtonItem(shouldShow: true)
         configureNav()
         addBarrButtonItem()
         checkJSONDataForPossibleErrors()
         
         //Load data from Core Data
         persistence.fetch(User.self) { [weak self] (posts) in
-            self?.usersArray = posts
+            self?.incomingDataArray = posts
         }
     }
     
+    
+    fileprivate func setupTableView() {
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
+        tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
+    }
+      
     private init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,23 +71,44 @@ final class HomeController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Search Bar Button Function
+       @objc fileprivate func handleShowSearchBar() {
+           showSearchBar(shouldShow: true)
+           searchBar.becomeFirstResponder()
+           searchBar.delegate = self
+       }
+    
+    fileprivate func showSearchBarButtonItem(shouldShow: Bool) {
+        if shouldShow {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleShowSearchBar))
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
+    }
+    
+    func showSearchBar(shouldShow: Bool) {
+           //If the search bar is shown then disable the bar button item(the opposite of the argument shouldShow)
+           showSearchBarButtonItem(shouldShow: !shouldShow)
+           searchBar.showsCancelButton = shouldShow
+           navigationItem.titleView = shouldShow ? searchBar: nil
+       }
     
     fileprivate func addBarrButtonItem() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sendBarButton)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sortBarButton)
     }
     
+    @objc fileprivate func sortTableViewbyUsername() {
+        incomingDataArray.sort { $0.username < $1.username } //sort username by ascending order
+        tableView.reloadData()
+    }
     
     fileprivate func configureNav() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Course List"
+        navigationItem.title = "Users"
     }
     
-    func animateTableViewWhileReloading() {
-        UIView.transition(with: tableView,duration:0.27,options:.transitionCrossDissolve,animations: { () -> Void in
-            self.tableView.reloadData()
-        }, completion: nil)
-    }
-    
+    //MARK: - Check JSON Data For Possible Errors
     @objc fileprivate func checkJSONDataForPossibleErrors() {
         guard let urlString = URL(string: urlToApi) else { return }
         
@@ -81,6 +127,7 @@ final class HomeController: UITableViewController {
     }
     
     
+    //MARK: - Send Message to API
     @objc fileprivate func sendMessage() {
         
         let alert = UIAlertController(title: "API Request", message: nil, preferredStyle: .alert)
