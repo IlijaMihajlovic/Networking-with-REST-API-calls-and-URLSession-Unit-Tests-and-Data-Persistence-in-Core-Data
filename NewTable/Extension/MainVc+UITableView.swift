@@ -8,22 +8,22 @@
 
 import UIKit
 
-extension MainVC {
+extension HomeController {
 
      //MARK: - UITableView DataSource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postsArray.count
+        return usersArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomCell
      
-        let course = postsArray[indexPath.row]
-        cell.messageLabel.text = course.body
+        let users = usersArray[indexPath.row]
+        cell.messageLabel.text = users.address.city
         cell.messageLabel.numberOfLines = 0
         cell.messageLabel.lineBreakMode = .byWordWrapping
-        cell.userId.text = "ID: \(course.id)"
+        cell.userId.text = "ID: \(users.id)"
 
         return cell
     }
@@ -33,7 +33,7 @@ extension MainVC {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
 
-            let task = postsArray.remove(at: indexPath.row)
+            let task = usersArray.remove(at: indexPath.row)
 
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
