@@ -19,12 +19,30 @@ extension HomeController {
 
        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomCell
      
-        let users = usersArray[indexPath.row]
-        cell.messageLabel.text = users.address.city
-        cell.messageLabel.numberOfLines = 0
-        cell.messageLabel.lineBreakMode = .byWordWrapping
-        cell.userId.text = "ID: \(users.id)"
+        
+        cell.avatar.image = nil
+        cell.tag = indexPath.row
+        
+        cell.address.text = "City: " +  usersArray[indexPath.row].address.city
+        cell.companyName.text = "Company: " + usersArray[indexPath.row].company.name
+        cell.username.text =  "Username: " + usersArray[indexPath.row].username
+        
+        cell.email.text = usersArray[indexPath.row].email
+        cell.street.text = usersArray[indexPath.row].address.street
+        cell.phone.text = usersArray[indexPath.row].phone
+        
+        
+        let url  = URL(string: usersArray[indexPath.row].avatar)
+             DispatchQueue.main.async {
 
+                 if cell.tag == indexPath.row {
+                     ImageService.getImage(withURL: url!) { (image) in
+                         cell.avatar.image = image
+                     }
+
+                 }
+
+             }
         return cell
     }
     

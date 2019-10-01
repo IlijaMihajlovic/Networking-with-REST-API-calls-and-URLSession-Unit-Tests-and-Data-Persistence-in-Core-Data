@@ -12,20 +12,8 @@ final class HomeController: UITableViewController {
     
     //Singleton
     static let shared = HomeController()
-    let persistence = PersistenceService.shared
-    
     var usersArray: [User] = []
-    //let persistence = PersistenceService.sharedpostsArray
     let cellId = "cellId"
-    
-    
-    lazy var getBarButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("GET", for: .normal)
-        button.addTarget(self, action: #selector(printJSONData), for: .touchUpInside)
-        button.frame = CGRect(x: 1, y: 0, width: 35, height: 35)
-        return button
-    }()
     
     lazy var sendBarButton: UIButton = {
         let button = UIButton(type: .system)
@@ -41,7 +29,8 @@ final class HomeController: UITableViewController {
         super.viewDidLoad()
         tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
         configureNav()
-        addBarrButtonItems()
+        addBarrButtonItem()
+        checkJSONDataForPossibleErrors()
         
         //Load data from Core Data
         persistence.fetch(User.self) { [weak self] (posts) in
@@ -58,8 +47,7 @@ final class HomeController: UITableViewController {
     }
     
     
-    fileprivate func addBarrButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: getBarButton)
+    fileprivate func addBarrButtonItem() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sendBarButton)
     }
     
@@ -75,8 +63,7 @@ final class HomeController: UITableViewController {
         }, completion: nil)
     }
     
-    @objc fileprivate func printJSONData() {
-        //let url = "https://jsonplaceholder.typicode.com/posts"
+    @objc fileprivate func checkJSONDataForPossibleErrors() {
         guard let urlString = URL(string: urlToApi) else { return }
         
         Networking.shared.fetchJSON(url: urlString) {(result) in

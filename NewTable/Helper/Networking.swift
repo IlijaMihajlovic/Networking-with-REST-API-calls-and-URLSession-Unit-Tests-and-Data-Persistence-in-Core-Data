@@ -60,7 +60,7 @@ struct Networking {
                 
                 DispatchQueue.main.async {
                     HomeController.shared.tableView.reloadData()
-                    HomeController.shared.persistence.save()
+                    persistence.save()
                 }
                 
             } catch {
