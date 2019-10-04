@@ -18,6 +18,10 @@
 		2465FF4422F43BD300944C34 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4322F43BD300944C34 /* Networking.swift */; };
 		2465FF4722F43C9900944C34 /* UITableViewDataSourceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */; };
 		2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4E22F484CB00944C34 /* StringExt.swift */; };
+		24BE0D9523477DFF00BB6125 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D9423477DFF00BB6125 /* SettingsLauncher.swift */; };
+		24BE0D9723478C7A00BB6125 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D9623478C7A00BB6125 /* SettingsCell.swift */; };
+		24BE0D992347A9E900BB6125 /* SettingsControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D982347A9E900BB6125 /* SettingsControllerModel.swift */; };
+		24BE0D9B2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */; };
 		24CECB9122F8856B00831255 /* NewTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CECB8622F884F300831255 /* NewTableTests.swift */; };
 		24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA402231A8E8900E57293 /* CustomCell.swift */; };
 		24DDA409231A94ED00E57293 /* AutoLayoutAnchorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */; };
@@ -68,6 +72,10 @@
 		2465FF4322F43BD300944C34 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataSourceMethods.swift; sourceTree = "<group>"; };
 		2465FF4E22F484CB00944C34 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		24BE0D9423477DFF00BB6125 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		24BE0D9623478C7A00BB6125 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		24BE0D982347A9E900BB6125 /* SettingsControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsControllerModel.swift; sourceTree = "<group>"; };
+		24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIbuttonExtension.swift"; sourceTree = "<group>"; };
 		24CECB8422F884F300831255 /* NewTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CECB8622F884F300831255 /* NewTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableTests.swift; sourceTree = "<group>"; };
 		24CECB8822F884F300831255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 				24F3CD4D2343AB2A00C71363 /* MapController.swift */,
 				24F3CD4B2343AA8800C71363 /* MainTabBarController.swift */,
 				24F3CD532343ACF900C71363 /* DetailVC.swift */,
+				24BE0D9423477DFF00BB6125 /* SettingsLauncher.swift */,
 			);
 			name = Controller;
 			path = Extension;
@@ -211,6 +220,7 @@
 				2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */,
 				24F3CD512343ACEA00C71363 /* UITableViewDelegateMethods.swift */,
 				24F3CD492343AA0600C71363 /* SearchBarExt.swift */,
+				24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */,
 				2465FF4E22F484CB00944C34 /* StringExt.swift */,
 				24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */,
 				24EA63952343492900DA3917 /* JSONDecoder&CodingKeys.swift */,
@@ -233,6 +243,7 @@
 				2400A47F22F6F1510035B8CC /* CoreData */,
 				24EA63A7234355B600DA3917 /* NewTable.xcdatamodeld */,
 				24F3CD4F2343ABA900C71363 /* JSONGeoModelData.swift */,
+				24BE0D982347A9E900BB6125 /* SettingsControllerModel.swift */,
 				2404B4C422F36589000ABF57 /* MessageModel.swift */,
 			);
 			path = Model;
@@ -252,6 +263,7 @@
 			children = (
 				24DDA402231A8E8900E57293 /* CustomCell.swift */,
 				244944E923473764009C65E7 /* HeaderLabel.swift */,
+				24BE0D9623478C7A00BB6125 /* SettingsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,11 +393,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2404B4C522F36589000ABF57 /* MessageModel.swift in Sources */,
+				24BE0D9B2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift in Sources */,
 				24F3CD502343ABA900C71363 /* JSONGeoModelData.swift in Sources */,
+				24BE0D9523477DFF00BB6125 /* SettingsLauncher.swift in Sources */,
 				24F3CD522343ACEA00C71363 /* UITableViewDelegateMethods.swift in Sources */,
 				24EA63B4234355D100DA3917 /* Company+CoreDataClass.swift in Sources */,
 				24EA63BC23435FBB00DA3917 /* CustomColor.swift in Sources */,
 				24F3CD542343ACF900C71363 /* DetailVC.swift in Sources */,
+				24BE0D992347A9E900BB6125 /* SettingsControllerModel.swift in Sources */,
 				2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */,
 				2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */,
 				24EA63A9234355B600DA3917 /* NewTable.xcdatamodeld in Sources */,
@@ -399,6 +414,7 @@
 				24EA63B3234355D100DA3917 /* Geo+CoreDataProperties.swift in Sources */,
 				2404B4B322F36525000ABF57 /* AppDelegate.swift in Sources */,
 				24F3CD562343AD2800C71363 /* MapControllerExt.swift in Sources */,
+				24BE0D9723478C7A00BB6125 /* SettingsCell.swift in Sources */,
 				24EA63B8234355D100DA3917 /* User+CoreDataClass.swift in Sources */,
 				24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */,
 				244944EA23473764009C65E7 /* HeaderLabel.swift in Sources */,

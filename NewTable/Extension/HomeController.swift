@@ -41,6 +41,14 @@ final class HomeController: UITableViewController {
         return button
     }()
     
+    lazy var moreButton: UIButton = {
+         let button = UIButton(type: .system)
+         button.setTitle("More", for: .normal)
+         button.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
+        button.addTarget(self, action: #selector(handleMore), for: .touchUpInside)
+         button.translatesAutoresizingMaskIntoConstraints = false
+         return button
+     }()
     
     
     //MARK: - Lifecycle
@@ -81,7 +89,8 @@ final class HomeController: UITableViewController {
     
     fileprivate func showBarButtonItems(shouldShow: Bool) {
         if shouldShow {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleShowSearchBar))
+            navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleShowSearchBar)),
+                                                  UIBarButtonItem(customView: moreButton)]
             
                navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: sendBarButton), UIBarButtonItem(customView: sortBarButton)]
             
@@ -107,6 +116,11 @@ final class HomeController: UITableViewController {
     fileprivate func configureNav() {
         //navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Users"
+    }
+    
+    let settingsLauncher = SettingsLauncher()
+    @objc fileprivate func handleMore() {
+        settingsLauncher.showSettings()
     }
     
     //MARK: - Check JSON Data For Possible Errors
