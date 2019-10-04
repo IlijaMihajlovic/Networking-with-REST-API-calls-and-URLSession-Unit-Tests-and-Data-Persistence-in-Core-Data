@@ -9,6 +9,7 @@
 import Foundation
 
 //MARK: - Constants
-let urlToApi = "https://api.myjson.com/bins/w0b55"
+
+let urlToApi = "https://api.myjson.com/bins/1f3i9r"
 let persistence = PersistenceService.shared
 let cellId = "cellId"
