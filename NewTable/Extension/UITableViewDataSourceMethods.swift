@@ -1,5 +1,5 @@
 //
-//  MainVc+UITableView.swift
+//  UITableViewDataSourceMethods.swift
 //  NewTable
 //
 //  Created by Ilija Mihajlovic on 8/2/19.

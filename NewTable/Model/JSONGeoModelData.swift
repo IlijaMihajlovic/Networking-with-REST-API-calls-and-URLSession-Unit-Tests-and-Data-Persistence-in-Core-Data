@@ -1,6 +1,6 @@
 //
 //  JSONGeoModelData.swift
-//  DarwinDigital
+//  NewTable
 //
 //  Created by Ilija Mihajlovic on 9/13/19.
 //  Copyright © 2019 Ilija Mihajlovic. All rights reserved.

@@ -14,8 +14,9 @@
 		2404B4C522F36589000ABF57 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4C422F36589000ABF57 /* MessageModel.swift */; };
 		2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404B4C622F36A7C000ABF57 /* NetworkError.swift */; };
 		2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421B73222F5E75A00CF2A5F /* PersistenceService.swift */; };
+		244944EA23473764009C65E7 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244944E923473764009C65E7 /* HeaderLabel.swift */; };
 		2465FF4422F43BD300944C34 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4322F43BD300944C34 /* Networking.swift */; };
-		2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */; };
+		2465FF4722F43C9900944C34 /* UITableViewDataSourceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */; };
 		2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4E22F484CB00944C34 /* StringExt.swift */; };
 		24CECB9122F8856B00831255 /* NewTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CECB8622F884F300831255 /* NewTableTests.swift */; };
 		24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA402231A8E8900E57293 /* CustomCell.swift */; };
@@ -63,8 +64,9 @@
 		2404B4C422F36589000ABF57 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		2404B4C622F36A7C000ABF57 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2421B73222F5E75A00CF2A5F /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		244944E923473764009C65E7 /* HeaderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		2465FF4322F43BD300944C34 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVc+UITableView.swift"; sourceTree = "<group>"; };
+		2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataSourceMethods.swift; sourceTree = "<group>"; };
 		2465FF4E22F484CB00944C34 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		24CECB8422F884F300831255 /* NewTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CECB8622F884F300831255 /* NewTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableTests.swift; sourceTree = "<group>"; };
@@ -206,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				24EA63BA23435FA100DA3917 /* Services */,
-				2465FF4622F43C9900944C34 /* MainVc+UITableView.swift */,
+				2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */,
 				24F3CD512343ACEA00C71363 /* UITableViewDelegateMethods.swift */,
 				24F3CD492343AA0600C71363 /* SearchBarExt.swift */,
 				2465FF4E22F484CB00944C34 /* StringExt.swift */,
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				24DDA402231A8E8900E57293 /* CustomCell.swift */,
+				244944E923473764009C65E7 /* HeaderLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,8 +401,9 @@
 				24F3CD562343AD2800C71363 /* MapControllerExt.swift in Sources */,
 				24EA63B8234355D100DA3917 /* User+CoreDataClass.swift in Sources */,
 				24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */,
+				244944EA23473764009C65E7 /* HeaderLabel.swift in Sources */,
 				24EA63C0234361B300DA3917 /* ImageService.swift in Sources */,
-				2465FF4722F43C9900944C34 /* MainVc+UITableView.swift in Sources */,
+				2465FF4722F43C9900944C34 /* UITableViewDataSourceMethods.swift in Sources */,
 				24EA63B9234355D100DA3917 /* User+CoreDataProperties.swift in Sources */,
 				24F3CD4C2343AA8800C71363 /* MainTabBarController.swift in Sources */,
 				24EA63BE23435FC000DA3917 /* SetRadiusExt.swift in Sources */,

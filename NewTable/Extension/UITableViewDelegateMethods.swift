@@ -23,6 +23,19 @@ extension HomeController {
         }, completion: nil)
         
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+           let label = HeaderLabel()
+           label.text = "Users"
+
+           let containerView = UIView()
+           containerView.addSubview(label)
+           label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+           label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+
+           return containerView
+       }
 
 }
 
