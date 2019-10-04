@@ -94,12 +94,12 @@ class CustomCell: UITableViewCell {
       fileprivate func addConstraints() {
          bubbleBackground.anchor(top: topAnchor, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: .init(top: 16, left: 16, bottom: 12, right: 16))
           
-          avatar.anchor(top: bubbleBackground.topAnchor, bottom: bubbleBackground.bottomAnchor, leading: bubbleBackground.leadingAnchor, trailing: nil, padding: .init(top: 5, left: 5, bottom: 5, right: 0), size: .init(width: 90, height: 90))
+          avatar.anchor(top: bubbleBackground.topAnchor, bottom: bubbleBackground.bottomAnchor, leading: bubbleBackground.leadingAnchor, trailing: nil, padding: .init(top: 5, left: 5, bottom: 5, right: 5), size: .init(width: 90, height: 90))
           
           username.anchor(top: avatar.topAnchor, bottom: address.topAnchor, leading: avatar.trailingAnchor, trailing: bubbleBackground.trailingAnchor, padding: .init(top: 0, left: 5, bottom: 5, right: 0), size: .init(width: 0, height: 0))
           
           address.anchor(top: username.bottomAnchor, bottom: companyName.topAnchor, leading: avatar.trailingAnchor, trailing: bubbleBackground.trailingAnchor, padding: .init(top: 5, left: 5, bottom: 5, right: 0), size: .init(width: 0, height: 0))
-          
+        
           companyName.anchor(top: address.bottomAnchor, bottom: avatar.bottomAnchor, leading: avatar.trailingAnchor, trailing: bubbleBackground.trailingAnchor, padding: .init(top: 5, left: 5, bottom: 5, right: 0), size: .init(width: 0, height: 0))
       }
       
