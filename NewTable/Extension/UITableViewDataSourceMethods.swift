@@ -14,9 +14,9 @@ extension HomeController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         isSearching ? filterdArray.count: incomingDataArray.count
+        
+
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -24,10 +24,10 @@ extension HomeController {
         
         if isSearching {
             searchBarIsSeraching(with: filterdArray, and: cell, atIndexPath: indexPath)
-            
+
         } else {
-            
             searchBarIsSeraching(with: incomingDataArray, and: cell, atIndexPath: indexPath)
+           
         }
         
         return cell
@@ -62,7 +62,6 @@ extension HomeController {
         }
         
     }
-    
     
     
     //Save Data to Core Data when right-swipe to delete

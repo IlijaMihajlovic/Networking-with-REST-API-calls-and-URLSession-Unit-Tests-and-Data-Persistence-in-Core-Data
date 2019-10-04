@@ -24,31 +24,15 @@ final class HomeController: UITableViewController {
         return searchBar
     }()
     
-    lazy fileprivate var sortBarButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Sort", for: .normal)
-        button.addTarget(self, action: #selector(sortTableViewbyUsername), for: .touchUpInside)
-        button.frame = CGRect(x: 1, y: 0, width: 45, height: 45)
-        return button
-    }()
     
-    lazy var sendBarButton: UIButton = {
+    lazy var moreButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Send", for: .normal)
-        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        button.setImage(UIImage(named: "more")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
+        button.addTarget(self, action: #selector(handleMore), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    lazy var moreButton: UIButton = {
-         let button = UIButton(type: .system)
-         button.setTitle("More", for: .normal)
-         button.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
-        button.addTarget(self, action: #selector(handleMore), for: .touchUpInside)
-         button.translatesAutoresizingMaskIntoConstraints = false
-         return button
-     }()
     
     
     //MARK: - Lifecycle
@@ -57,7 +41,7 @@ final class HomeController: UITableViewController {
         setupTableView()
         showBarButtonItems(shouldShow: true)
         configureNav()
-        checkJSONDataForPossibleErrors()
+        getJSONDataAndCheckForPossibleErrors()
         
         //Load data from Core Data
         persistence.fetch(User.self) { [weak self] (posts) in
@@ -71,7 +55,7 @@ final class HomeController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
     }
-      
+    
     private init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -81,40 +65,34 @@ final class HomeController: UITableViewController {
     }
     
     //MARK: - Search Bar Button Function
-       @objc fileprivate func handleShowSearchBar() {
-           showSearchBar(shouldShow: true)
-           searchBar.becomeFirstResponder()
-           searchBar.delegate = self
-       }
+    @objc fileprivate func handleShowSearchBar() {
+        showSearchBar(shouldShow: true)
+        searchBar.becomeFirstResponder()
+        searchBar.delegate = self
+    }
     
     fileprivate func showBarButtonItems(shouldShow: Bool) {
         if shouldShow {
-            navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleShowSearchBar)),
-                                                  UIBarButtonItem(customView: moreButton)]
-            
-               navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: sendBarButton), UIBarButtonItem(customView: sortBarButton)]
+            navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleShowSearchBar)),UIBarButtonItem(customView: moreButton)]
             
         } else {
             navigationItem.rightBarButtonItems = nil
-            navigationItem.leftBarButtonItems = nil
-
         }
     }
     
     func showSearchBar(shouldShow: Bool) {
-           //If the search bar is shown then disable the bar button item(the opposite of the argument shouldShow)
-           showBarButtonItems(shouldShow: !shouldShow)
-           searchBar.showsCancelButton = shouldShow
-           navigationItem.titleView = shouldShow ? searchBar: nil
-       }
+        //If the search bar is shown then disable the bar button item(the opposite of the argument shouldShow)
+        showBarButtonItems(shouldShow: !shouldShow)
+        searchBar.showsCancelButton = shouldShow
+        navigationItem.titleView = shouldShow ? searchBar: nil
+    }
     
-    @objc fileprivate func sortTableViewbyUsername() {
+    @objc func sortTableViewbyUsername() {
         incomingDataArray.sort { $0.username < $1.username } //sort username by ascending order
         tableView.reloadData()
     }
     
     fileprivate func configureNav() {
-        //navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Users"
     }
     
@@ -124,7 +102,7 @@ final class HomeController: UITableViewController {
     }
     
     //MARK: - Check JSON Data For Possible Errors
-    @objc fileprivate func checkJSONDataForPossibleErrors() {
+    @objc func getJSONDataAndCheckForPossibleErrors() {
         guard let urlString = URL(string: urlToApi) else { return }
         
         Networking.shared.fetchJSON(url: urlString) {(result) in
@@ -143,7 +121,7 @@ final class HomeController: UITableViewController {
     
     
     //MARK: - Send Message to API
-    @objc fileprivate func sendMessage() {
+    @objc  func sendMessage() {
         
         let alert = UIAlertController(title: "API Request", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
@@ -216,10 +194,9 @@ final class HomeController: UITableViewController {
         }
         
         //MARK: MessageTextField
-        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object:alert.textFields?[2],
-                                               queue: OperationQueue.main) { (notification) -> Void in
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object:alert.textFields?[2], queue: OperationQueue.main) { (notification) -> Void in
                                                 
-                                                sendAction.isEnabled = !apiMessage.text!.isEmpty && apiId.text!.isNumeric && !userIdAsNumber.text!.isEmpty && userIdAsNumber.text!.isNumeric && !apiMessage.text!.isEmpty && !apiMessage.text!.isNumeric && !apiBody.text!.isEmpty && !apiBody.text!.isNumeric
+            sendAction.isEnabled = !apiMessage.text!.isEmpty && apiId.text!.isNumeric && !userIdAsNumber.text!.isEmpty && userIdAsNumber.text!.isNumeric && !apiMessage.text!.isEmpty && !apiMessage.text!.isNumeric && !apiBody.text!.isEmpty && !apiBody.text!.isNumeric
         }
         
         //MARK: BodyTextField

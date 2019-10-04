@@ -77,6 +77,7 @@ class CustomCell: UITableViewCell {
           label.translatesAutoresizingMaskIntoConstraints = false
           return label
       }()
+    
       
       //MARK: - Cell Initializer
       override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -84,6 +85,7 @@ class CustomCell: UITableViewCell {
           backgroundColor = .clear
           addViewToSubview()
           addConstraints()
+        
       }
       
       required init?(coder aDecoder: NSCoder) {
