@@ -6,10 +6,9 @@
 //  Copyright © 2019 Ilija Mihajlovic. All rights reserved.
 //
 
-import Foundation
-
 //MARK: - Constants
 
 let urlToApi = "https://api.myjson.com/bins/1f3i9r"
 let persistence = PersistenceService.shared
-let cellId = "cellId"
+let tableViewCellId = "tableViewCellId"
+let collectionViewCellId = "collectionViewCellId"

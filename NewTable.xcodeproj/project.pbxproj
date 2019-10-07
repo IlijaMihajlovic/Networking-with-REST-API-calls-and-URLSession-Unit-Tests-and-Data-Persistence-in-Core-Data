@@ -23,6 +23,8 @@
 		24BE0D992347A9E900BB6125 /* SettingsControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D982347A9E900BB6125 /* SettingsControllerModel.swift */; };
 		24BE0D9B2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */; };
 		24CECB9122F8856B00831255 /* NewTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CECB8622F884F300831255 /* NewTableTests.swift */; };
+		24DCBF72234B8615003E7C1D /* UICollectionViewDataSourceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCBF71234B8615003E7C1D /* UICollectionViewDataSourceMethods.swift */; };
+		24DCBF74234B862F003E7C1D /* UICollectionViewDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCBF73234B862F003E7C1D /* UICollectionViewDelegateMethods.swift */; };
 		24DDA403231A8E8900E57293 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA402231A8E8900E57293 /* CustomCell.swift */; };
 		24DDA409231A94ED00E57293 /* AutoLayoutAnchorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */; };
 		24EA63932343485500DA3917 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA63922343485500DA3917 /* Constants.swift */; };
@@ -79,6 +81,8 @@
 		24CECB8422F884F300831255 /* NewTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CECB8622F884F300831255 /* NewTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableTests.swift; sourceTree = "<group>"; };
 		24CECB8822F884F300831255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24DCBF71234B8615003E7C1D /* UICollectionViewDataSourceMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDataSourceMethods.swift; sourceTree = "<group>"; };
+		24DCBF73234B862F003E7C1D /* UICollectionViewDelegateMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelegateMethods.swift; sourceTree = "<group>"; };
 		24DDA402231A8E8900E57293 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutAnchorExtension.swift; sourceTree = "<group>"; };
 		24EA63922343485500DA3917 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -216,9 +220,9 @@
 		2465FF4522F43BDB00944C34 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				24DCBF76234B8653003E7C1D /* UICollectionViewMethods */,
+				24DCBF75234B8644003E7C1D /* UITableViewMethods */,
 				24EA63BA23435FA100DA3917 /* Services */,
-				2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */,
-				24F3CD512343ACEA00C71363 /* UITableViewDelegateMethods.swift */,
 				24F3CD492343AA0600C71363 /* SearchBarExt.swift */,
 				24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */,
 				2465FF4E22F484CB00944C34 /* StringExt.swift */,
@@ -256,6 +260,24 @@
 				24CECB8822F884F300831255 /* Info.plist */,
 			);
 			path = NewTableTests;
+			sourceTree = "<group>";
+		};
+		24DCBF75234B8644003E7C1D /* UITableViewMethods */ = {
+			isa = PBXGroup;
+			children = (
+				2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */,
+				24F3CD512343ACEA00C71363 /* UITableViewDelegateMethods.swift */,
+			);
+			path = UITableViewMethods;
+			sourceTree = "<group>";
+		};
+		24DCBF76234B8653003E7C1D /* UICollectionViewMethods */ = {
+			isa = PBXGroup;
+			children = (
+				24DCBF71234B8615003E7C1D /* UICollectionViewDataSourceMethods.swift */,
+				24DCBF73234B862F003E7C1D /* UICollectionViewDelegateMethods.swift */,
+			);
+			path = UICollectionViewMethods;
 			sourceTree = "<group>";
 		};
 		24DDA401231A8E7200E57293 /* View */ = {
@@ -398,6 +420,7 @@
 				24BE0D9523477DFF00BB6125 /* SettingsLauncher.swift in Sources */,
 				24F3CD522343ACEA00C71363 /* UITableViewDelegateMethods.swift in Sources */,
 				24EA63B4234355D100DA3917 /* Company+CoreDataClass.swift in Sources */,
+				24DCBF74234B862F003E7C1D /* UICollectionViewDelegateMethods.swift in Sources */,
 				24EA63BC23435FBB00DA3917 /* CustomColor.swift in Sources */,
 				24F3CD542343ACF900C71363 /* DetailVC.swift in Sources */,
 				24BE0D992347A9E900BB6125 /* SettingsControllerModel.swift in Sources */,
@@ -408,6 +431,7 @@
 				24EA63B5234355D100DA3917 /* Company+CoreDataProperties.swift in Sources */,
 				2404B4B522F36525000ABF57 /* HomeController.swift in Sources */,
 				2465FF4422F43BD300944C34 /* Networking.swift in Sources */,
+				24DCBF72234B8615003E7C1D /* UICollectionViewDataSourceMethods.swift in Sources */,
 				2421B73322F5E75A00CF2A5F /* PersistenceService.swift in Sources */,
 				24EA63B2234355D100DA3917 /* Geo+CoreDataClass.swift in Sources */,
 				24EA63B6234355D100DA3917 /* Address+CoreDataClass.swift in Sources */,

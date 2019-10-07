@@ -25,6 +25,14 @@ final class HomeController: UITableViewController {
     }()
     
     
+    lazy var customRefreshControl: UIRefreshControl = {
+          var refreshControl = UIRefreshControl()
+          refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+          refreshControl.addTarget(self, action: #selector(refreshCollectionViewPulled), for: .valueChanged)
+          return refreshControl
+      }()
+    
+    
     lazy var moreButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "more")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -34,28 +42,23 @@ final class HomeController: UITableViewController {
         return button
     }()
     
-    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         showBarButtonItems(shouldShow: true)
         configureNav()
+        configureRefreshController()
+        addViewToSubview()
         getJSONDataAndCheckForPossibleErrors()
         
         //Load data from Core Data
         persistence.fetch(User.self) { [weak self] (posts) in
             self?.incomingDataArray = posts
+            
         }
     }
-    
-    
-    fileprivate func setupTableView() {
-        tableView.backgroundColor = .white
-        tableView.separatorStyle = .none
-        tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
-    }
-    
+ 
     private init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,7 +67,7 @@ final class HomeController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Search Bar Button Function
+    //MARK: - Search Bar Methods
     @objc fileprivate func handleShowSearchBar() {
         showSearchBar(shouldShow: true)
         searchBar.becomeFirstResponder()
@@ -87,19 +90,48 @@ final class HomeController: UITableViewController {
         navigationItem.titleView = shouldShow ? searchBar: nil
     }
     
-    @objc func sortTableViewbyUsername() {
-        incomingDataArray.sort { $0.username < $1.username } //sort username by ascending order
-        tableView.reloadData()
-    }
+    
+    // MARK: Table View Methods
+    fileprivate func setupTableView() {
+         tableView.backgroundColor = .white
+         tableView.separatorStyle = .none
+         tableView.refreshControl = customRefreshControl
+         tableView.register(CustomCell.self, forCellReuseIdentifier: tableViewCellId)
+     }
+     
+     @objc func sortTableViewbyUsername() {
+            incomingDataArray.sort { $0.username < $1.username } //sort username by ascending order
+            tableView.reloadData()
+        }
+    
     
     fileprivate func configureNav() {
         navigationItem.title = "Users"
     }
     
-    let settingsLauncher = SettingsLauncher()
     @objc fileprivate func handleMore() {
-        settingsLauncher.showSettings()
-    }
+          SettingsLauncher.shared.showSettings()
+      }
+    
+    
+    //MARK: - Refresh Controller Methods
+    fileprivate func configureRefreshController() {
+         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+         customRefreshControl.attributedTitle = NSAttributedString(string: "", attributes: attributes)
+               
+     }
+    
+    @objc func refreshCollectionViewPulled(refreshControl: UIRefreshControl) {
+           print("Refresh")
+           getJSONDataAndCheckForPossibleErrors()
+           
+           DispatchQueue.main.async {
+               self.tableView.reloadData()
+           }
+           
+           refreshControl.endRefreshing()
+           
+       }
     
     //MARK: - Check JSON Data For Possible Errors
     @objc func getJSONDataAndCheckForPossibleErrors() {
@@ -118,6 +150,12 @@ final class HomeController: UITableViewController {
             }
         }
     }
+    
+    
+    //MARK: - Add View To Subview
+    fileprivate func addViewToSubview() {
+           [customRefreshControl].forEach{view.addSubview($0)}
+       }
     
     
     //MARK: - Send Message to API

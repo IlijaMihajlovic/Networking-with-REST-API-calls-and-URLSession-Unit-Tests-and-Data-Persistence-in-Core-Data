@@ -15,12 +15,11 @@ extension HomeController {
         
         isSearching ? filterdArray.count: incomingDataArray.count
         
-
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellId, for: indexPath) as! CustomCell
         
         if isSearching {
             searchBarIsSeraching(with: filterdArray, and: cell, atIndexPath: indexPath)
@@ -31,15 +30,16 @@ extension HomeController {
         }
         
         return cell
-        
     }
+    
     
     
     //TODO: - Potential for using generics
     func searchBarIsSeraching(with modelData: [User], and cell: CustomCell, atIndexPath: IndexPath) {
+        
         cell.avatar.image = nil
         cell.tag = atIndexPath.row
-        
+
         cell.address.text = "City: " +  modelData[atIndexPath.row].address.city
         cell.companyName.text = "Company: " + modelData[atIndexPath.row].company.name
         cell.username.text =  "Username: " + modelData[atIndexPath.row].username
@@ -56,13 +56,10 @@ extension HomeController {
                 ImageService.getImage(withURL: url!) { (image) in
                     cell.avatar.image = image
                 }
-                
             }
-            
         }
-        
     }
-    
+  
     
     //Save Data to Core Data when right-swipe to delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -81,7 +78,6 @@ extension HomeController {
             }
         }
     }
-    
     
 }
 
