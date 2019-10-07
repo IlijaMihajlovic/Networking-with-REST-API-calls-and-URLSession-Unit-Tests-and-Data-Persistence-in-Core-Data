@@ -6,6 +6,8 @@
 
 Networking in Swift with REST API calls and URLSession, that puts the parsed JSON Data from a HTTP based JSON storage endpoint I created into a TableView and persists the data using Core Data with CRUD (create, read, update, and delete). I used also Unit Tests to test URLSession asynchronous network operations and make the project as robust as possible. When the JSON data is parsed into the dynamic TableView cell we can easily delete the cell with a swipe, the TableView will then reload itself with a custom made animation and Core Data will update and save the changes in realtime. There is also an option to send HTTP GET requests to the JSONPlaceholder server.
 
+And last but not least I implemented settings launcher slide-up menu that slides up from the bottom of the screen when the settings tab bar button is pressed. On the slide-up menu, we have all the functionalities I mentioned above like getting the data from the REST API, sorting the data in the table view,  and sending the data to a REST API.
+
 The project also supports filtering the data in the cells using a search bar and sorting them in the right alphabetical order.
 
 
