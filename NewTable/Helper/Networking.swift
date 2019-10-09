@@ -32,7 +32,6 @@ struct Networking {
             do {
                 
                 let decoder = JSONDecoder.init(context: PersistenceService.shared.persistentContainer.viewContext)
-                
                 let data = try decoder.decode([User].self, from: jsonData)
                 HomeController.shared.incomingDataArray = data
                 
@@ -46,7 +45,6 @@ struct Networking {
                     users.id = user.id
                     users.name = user.name
                     users.phone = user.phone
-                
                 
                 completion(.success(data))
                 HomeController.shared.incomingDataArray = data
