@@ -19,6 +19,12 @@ class CustomCell: UITableViewCell {
         return bubbleView
     }()
     
+    let userInfoContainerView: UIView = {
+         let containerView = UIView()
+          containerView.translatesAutoresizingMaskIntoConstraints = false
+          return containerView
+      }()
+    
     let address: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -78,38 +84,49 @@ class CustomCell: UITableViewCell {
         return label
     }()
     
-    
+
     //MARK: - Cell Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-  
         backgroundColor = .clear
+        
         addViewToSubview()
         addConstraints()
-        
+       
     }
-    
  
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     //MARK: - Constraints and Add Subview Functions
     fileprivate func addConstraints() {
         bubbleBackground.anchor(top: topAnchor, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: .init(top: 16, left: 16, bottom: 12, right: 16))
         
-        avatar.anchor(top: bubbleBackground.topAnchor, bottom: bubbleBackground.bottomAnchor, leading: bubbleBackground.leadingAnchor, trailing: nil, padding: .init(top: 5, left: 5, bottom: 5, right: 5), size: .init(width: 90, height: 90))
+        userInfoContainerView.anchor(top: bubbleBackground.topAnchor, bottom: bubbleBackground.bottomAnchor, leading: avatar.trailingAnchor, trailing: bubbleBackground.trailingAnchor)
         
-        username.anchor(top: avatar.topAnchor, bottom: address.topAnchor, leading: avatar.trailingAnchor, trailing: bubbleBackground.trailingAnchor, padding: .init(top: 0, left: 5, bottom: 5, right: 0), size: .init(width: 0, height: 0))
+       avatar.anchor(top: bubbleBackground.topAnchor, bottom: bubbleBackground.bottomAnchor, leading: bubbleBackground.leadingAnchor, trailing: nil, padding: .init(top: 5, left: 5, bottom: 5, right: 5), size: .init(width: 90, height: 90))
+
+        username.anchor(top: avatar.topAnchor, bottom: address.topAnchor, leading: userInfoContainerView.leadingAnchor, trailing: userInfoContainerView.trailingAnchor, padding: .init(top: 3, left: 5, bottom: 0, right: 0))
         
-        address.anchor(top: username.bottomAnchor, bottom: companyName.topAnchor, leading: avatar.trailingAnchor, trailing: bubbleBackground.trailingAnchor, padding: .init(top: 5, left: 5, bottom: 5, right: 0), size: .init(width: 0, height: 0))
         
-        companyName.anchor(top: address.bottomAnchor, bottom: avatar.bottomAnchor, leading: avatar.trailingAnchor, trailing: bubbleBackground.trailingAnchor, padding: .init(top: 5, left: 5, bottom: 5, right: 0), size: .init(width: 0, height: 0))
+        companyName.anchor(top: address.bottomAnchor, bottom: userInfoContainerView.bottomAnchor, leading: userInfoContainerView.leadingAnchor, trailing: userInfoContainerView.trailingAnchor, padding: .init(top: 0, left: 5, bottom: 5, right: 0))
         
+
+        NSLayoutConstraint.activate([
+            address.centerXAnchor.constraint(equalTo: userInfoContainerView.centerXAnchor),
+            address.heightAnchor.constraint(equalTo: userInfoContainerView.heightAnchor, multiplier: 0.5),
+            address.leadingAnchor.constraint(equalTo: userInfoContainerView.leadingAnchor, constant: 5)
+            ])
+
     }
     
     fileprivate func addViewToSubview() {
-        [bubbleBackground, avatar, username, address, companyName].forEach{addSubview($0)}
+        addSubview(bubbleBackground)
+        [avatar, userInfoContainerView].forEach{bubbleBackground.addSubview($0)}
+        [username, address, companyName].forEach{userInfoContainerView.addSubview($0)}
     }
+    
     
 }

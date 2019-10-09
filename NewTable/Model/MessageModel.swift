@@ -9,7 +9,7 @@
 import Foundation
 
 //JSON Model
-final class Message: Codable {
+ class Message: Codable {
     var userId: Int
     var id: Int
     var title: String

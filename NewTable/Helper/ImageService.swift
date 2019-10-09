@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageService {
+final class ImageService {
     
     static let cache = NSCache<NSString, UIImage>()
     

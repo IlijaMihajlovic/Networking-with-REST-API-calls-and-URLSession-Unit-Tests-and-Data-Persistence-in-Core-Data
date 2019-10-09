@@ -142,7 +142,7 @@ final class HomeController: UITableViewController {
             switch result {
             case .success(let posts):
                 posts.forEach({ (post) in
-                    print("JSON Data: \(post.address.city), \(post.company.name)")
+                    //print("JSON Data: \(post.address.city), \(post.company.name)")
                 })
                 
             case .failure(let err):

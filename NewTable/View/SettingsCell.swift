@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsCell: UICollectionViewCell {
+final class SettingsCell: UICollectionViewCell {
     
     var setting: SettingsControllerModel? {
         didSet {
@@ -21,21 +21,6 @@ class SettingsCell: UICollectionViewCell {
             }
         }
     }
-    
-    //Higlight  Cell
-     override var isHighlighted: Bool {
-         didSet {
-             
-             print(isHighlighted)
-             
-            backgroundColor =  isHighlighted ? UIColor.mainAppOrange: UIColor.white
-     
-             nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.darkGray
-
-            iconImageView.tintColor = isHighlighted ? UIColor.white : UIColor.systemOrange
-             
-         }
-     }
     
     let nameLabel: UILabel = {
         let label = UILabel()
@@ -54,6 +39,17 @@ class SettingsCell: UICollectionViewCell {
       }()
     
     
+    //Higlight  Cell
+       override var isHighlighted: Bool {
+           didSet {
+               
+              backgroundColor =  isHighlighted ? UIColor.mainAppOrange: UIColor.white
+               nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.darkGray
+              iconImageView.tintColor = isHighlighted ? UIColor.white : UIColor.systemOrange
+           }
+       }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubView()
@@ -61,26 +57,21 @@ class SettingsCell: UICollectionViewCell {
         
     }
     
+    required init?(coder: NSCoder) {
+           fatalError("init(coder:) has not been implemented")
+       }
+    
+    
     fileprivate func addSubView() {
-           [nameLabel, iconImageView].forEach{(addSubview($0))}
+           [nameLabel, iconImageView].forEach{addSubview($0)}
            
        }
     
     //MARK: - Constraints
     fileprivate func setupConstraints() {
-       
-        //nameLabel Constraint
-        nameLabel.anchor(top: self.topAnchor, bottom: nil, leading: iconImageView.trailingAnchor, trailing: nil, padding: .init(top: 5, left: 5, bottom: 0, right: 0), size: .init(width: 70, height: 40))
+        nameLabel.anchor(top: nil, bottom: nil, leading: iconImageView.trailingAnchor, trailing: nil, padding: .init(top: 5, left: 5, bottom: 0, right: 0), size: .init(width: 70, height: 40))
         
-    
-        iconImageView.anchor(top: self.topAnchor, bottom: self.safeAreaLayoutGuide.bottomAnchor, leading: self.leadingAnchor, trailing: nameLabel.leadingAnchor, padding: .init(top: 5, left: 11, bottom: 12, right: 7), size: .init(width: 35, height: 35))
-        
-       
+        iconImageView.anchor(top: topAnchor, bottom: nil, leading: leadingAnchor, trailing: nameLabel.leadingAnchor, padding: .init(top: 6, left: 11, bottom: 12, right: 7), size: .init(width: 35, height: 33))
         }
-        
     
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }

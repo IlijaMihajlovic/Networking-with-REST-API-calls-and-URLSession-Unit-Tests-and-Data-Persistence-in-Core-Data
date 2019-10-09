@@ -8,11 +8,13 @@
 
 import UIKit
 
-extension SettingsLauncher {
+//MARK: - UICollectionView Data Source Methods
+extension SettingsLauncher: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return settings.count
      }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            

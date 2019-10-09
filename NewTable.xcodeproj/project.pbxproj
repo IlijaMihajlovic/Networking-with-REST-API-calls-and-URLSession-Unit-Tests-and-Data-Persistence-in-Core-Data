@@ -18,10 +18,10 @@
 		2465FF4422F43BD300944C34 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4322F43BD300944C34 /* Networking.swift */; };
 		2465FF4722F43C9900944C34 /* UITableViewDataSourceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */; };
 		2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465FF4E22F484CB00944C34 /* StringExt.swift */; };
+		24A91DD1234DF27000B19388 /* UINavigationControllerStatusBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A91DD0234DF27000B19388 /* UINavigationControllerStatusBarColor.swift */; };
 		24BE0D9523477DFF00BB6125 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D9423477DFF00BB6125 /* SettingsLauncher.swift */; };
 		24BE0D9723478C7A00BB6125 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D9623478C7A00BB6125 /* SettingsCell.swift */; };
 		24BE0D992347A9E900BB6125 /* SettingsControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D982347A9E900BB6125 /* SettingsControllerModel.swift */; };
-		24BE0D9B2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */; };
 		24CECB9122F8856B00831255 /* NewTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CECB8622F884F300831255 /* NewTableTests.swift */; };
 		24DCBF72234B8615003E7C1D /* UICollectionViewDataSourceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCBF71234B8615003E7C1D /* UICollectionViewDataSourceMethods.swift */; };
 		24DCBF74234B862F003E7C1D /* UICollectionViewDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCBF73234B862F003E7C1D /* UICollectionViewDelegateMethods.swift */; };
@@ -74,10 +74,10 @@
 		2465FF4322F43BD300944C34 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2465FF4622F43C9900944C34 /* UITableViewDataSourceMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataSourceMethods.swift; sourceTree = "<group>"; };
 		2465FF4E22F484CB00944C34 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		24A91DD0234DF27000B19388 /* UINavigationControllerStatusBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerStatusBarColor.swift; sourceTree = "<group>"; };
 		24BE0D9423477DFF00BB6125 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		24BE0D9623478C7A00BB6125 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		24BE0D982347A9E900BB6125 /* SettingsControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsControllerModel.swift; sourceTree = "<group>"; };
-		24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIbuttonExtension.swift"; sourceTree = "<group>"; };
 		24CECB8422F884F300831255 /* NewTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CECB8622F884F300831255 /* NewTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableTests.swift; sourceTree = "<group>"; };
 		24CECB8822F884F300831255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 				24DCBF75234B8644003E7C1D /* UITableViewMethods */,
 				24EA63BA23435FA100DA3917 /* Services */,
 				24F3CD492343AA0600C71363 /* SearchBarExt.swift */,
-				24BE0D9A2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift */,
+				24A91DD0234DF27000B19388 /* UINavigationControllerStatusBarColor.swift */,
 				2465FF4E22F484CB00944C34 /* StringExt.swift */,
 				24DDA408231A94ED00E57293 /* AutoLayoutAnchorExtension.swift */,
 				24EA63952343492900DA3917 /* JSONDecoder&CodingKeys.swift */,
@@ -415,7 +415,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2404B4C522F36589000ABF57 /* MessageModel.swift in Sources */,
-				24BE0D9B2347AAA700BB6125 /* UIColor+UIbuttonExtension.swift in Sources */,
 				24F3CD502343ABA900C71363 /* JSONGeoModelData.swift in Sources */,
 				24BE0D9523477DFF00BB6125 /* SettingsLauncher.swift in Sources */,
 				24F3CD522343ACEA00C71363 /* UITableViewDelegateMethods.swift in Sources */,
@@ -424,6 +423,7 @@
 				24EA63BC23435FBB00DA3917 /* CustomColor.swift in Sources */,
 				24F3CD542343ACF900C71363 /* DetailVC.swift in Sources */,
 				24BE0D992347A9E900BB6125 /* SettingsControllerModel.swift in Sources */,
+				24A91DD1234DF27000B19388 /* UINavigationControllerStatusBarColor.swift in Sources */,
 				2404B4C722F36A7C000ABF57 /* NetworkError.swift in Sources */,
 				2465FF4F22F484CB00944C34 /* StringExt.swift in Sources */,
 				24EA63A9234355B600DA3917 /* NewTable.xcdatamodeld in Sources */,

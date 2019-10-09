@@ -8,9 +8,10 @@
 
 import UIKit
 
+//MARK: - UITableView Data Source Methods
+
 extension HomeController {
     
-    //MARK: - UITableView DataSource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         isSearching ? filterdArray.count: incomingDataArray.count

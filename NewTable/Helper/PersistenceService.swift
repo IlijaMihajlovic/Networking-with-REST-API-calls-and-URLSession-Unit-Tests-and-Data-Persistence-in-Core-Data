@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class PersistenceService {
+final class PersistenceService {
 
     private init() {}
     static let shared = PersistenceService()

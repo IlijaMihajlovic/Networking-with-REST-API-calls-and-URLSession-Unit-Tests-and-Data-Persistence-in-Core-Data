@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+final class DetailVC: UIViewController {
     
     static let shared = DetailVC()
     

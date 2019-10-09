@@ -8,7 +8,7 @@
 
 import UIKit
 
-//MARK: - UITableView Delegate Method
+//MARK: - UITableView Delegate Methods
 
 extension HomeController {
     

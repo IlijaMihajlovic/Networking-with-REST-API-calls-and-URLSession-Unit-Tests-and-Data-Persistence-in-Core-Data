@@ -8,14 +8,14 @@
 
 import UIKit
 
-class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+final class SettingsLauncher: NSObject {
     
     //Singleton
     static let shared = SettingsLauncher()
     
     //MARK: - Properties
     let blurredView = UIView()
-    let cellHeight: CGFloat = 50
+    let cellHeight: CGFloat = 58
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

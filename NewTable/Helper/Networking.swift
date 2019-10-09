@@ -46,16 +46,10 @@ struct Networking {
                     users.id = user.id
                     users.name = user.name
                     users.phone = user.phone
-                }
+                
                 
                 completion(.success(data))
                 HomeController.shared.incomingDataArray = data
-                
-                data.forEach { (user) in
-                    // print("City: \(user.address.geo.lng)")
-                    print("LNG: \(user.address.geo.lng)")
-                    print("company: \(user.company.name), \(user.company.bs)")
-                    
                 }
                 
                 DispatchQueue.main.async {
