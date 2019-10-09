@@ -33,7 +33,7 @@ ___
 
 * On the left side, we see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API.
 
-On the right side, we can see a custom created slide menu with buttons inside init that shows up when the "more icon/button" is tapped inside the NavigationBar, also worth noticing when the slide menu shows up the backgorund bahinde it dims swith a smooth animation.   
+* On the right side, we can see a custom created slide menu with buttons inside init that shows up when the "more icon/button" is tapped inside the NavigationBar, also worth noticing when the slide menu shows up the backgorund bahinde it dims swith a smooth animation.   
 
 ## License
 ```
