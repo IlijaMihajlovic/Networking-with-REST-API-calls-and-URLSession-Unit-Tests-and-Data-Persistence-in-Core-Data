@@ -29,6 +29,12 @@ ___
 * Use GitHub to clone the repository locally, or download the .zip file of the repository and extract the files.
 ___
 
+
+On the left side, we see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API.
+
+
+On the other side, we can see a custom created slide menu with buttons init that shows up we the more button is tapped inside the NavigationBar. 
+
 ## License
 ```
 MIT License
