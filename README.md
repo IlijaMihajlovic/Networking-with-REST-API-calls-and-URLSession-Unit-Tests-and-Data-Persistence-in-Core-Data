@@ -35,6 +35,9 @@ ___
 
 * On the right side, we can see a custom created slide menu with buttons inside init that shows up when the "more icon/button" is tapped inside the NavigationBar, also worth noticing when the slide menu shows up the backgorund bahinde it dims swith a smooth animation.   
 
+![alt text](https://github.com/IlijaMihajlovic/Core-ML-And-Vision-Object-Classifier-Lightweight-Version/blob/master/Images/startScreen.png)
+___
+
 ## License
 ```
 MIT License
