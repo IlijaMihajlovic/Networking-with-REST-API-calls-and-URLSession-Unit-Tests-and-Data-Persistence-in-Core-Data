@@ -55,7 +55,7 @@ ___
 
    ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/deleteDetailVCAndMap.png)
    
-* On the far right side of the image, we can see MKMapView with annotations showing the users locations on the map
+* On the far right side of the image, we can see the MKMapView with annotations showing the users locations on the map.
 ___
 
 ## The Project
