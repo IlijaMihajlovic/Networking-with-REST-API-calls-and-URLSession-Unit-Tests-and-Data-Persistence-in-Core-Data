@@ -51,7 +51,7 @@ ___
 
 * On the first mockup, we can see when the user swipes to the left and tries to delete the cell. If the cell is then deleted core data updates the database with new changes and the table view gets reloaded to represent the changes.
 
-   The mockup in the middle of the image shows what I call the DetailViewController it gets loaded when the user taps on a cell. This DetailViewController showcases more information about the user i.e. the particular tapped cell.
+   The mockup in the middle of the image shows what I call the DetailViewController and it gets loaded when the user taps on a cell. In other words this DetailViewController showcases more information about the user i.e. the particular tapped cell.
 
    ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/deleteDetailVCAndMap.png)
    
