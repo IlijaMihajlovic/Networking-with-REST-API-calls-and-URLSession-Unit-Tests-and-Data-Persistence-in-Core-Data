@@ -41,7 +41,7 @@ ___
 
   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/searchAndPullToRefresh.png)
 
-* On the other side there is the currently put in motion pull to refresh functionality that download or reloads the data if necessary.
+* On the other side there is the currently put in motion pull to refresh functionality that downloads or reloads the data if necessary.
 
 ___
 
