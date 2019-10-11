@@ -205,13 +205,13 @@ final class HomeController: UITableViewController {
         
         alert.addTextField {
             (textFieldMessage: UITextField!) in
-            textFieldMessage.placeholder = "Message Title as String"
+            textFieldMessage.placeholder = "Message Title as Text"
             textFieldMessage.keyboardType = .alphabet
         }
         
         alert.addTextField {
             (textFieldMessage: UITextField!) in
-            textFieldMessage.placeholder = "Message Body as String"
+            textFieldMessage.placeholder = "Message Body as Text"
             textFieldMessage.keyboardType = .alphabet
         }
         
