@@ -4,10 +4,9 @@
 ![swift-version](https://img.shields.io/badge/swift-5.0-Orange.svg)
 ![lisence](https://img.shields.io/badge/license-MIT-Lightgrey.svg)
 
-Networking in Swift with REST API calls and URLSession, that puts the parsed JSON Data from an HTTP based JSON storage endpoint I created into a TableView and persists the data using Core Data with CRUD (create, read, update, and delete). I used also Unit Tests to test URLSession asynchronous network operations and make the project as robust as possible. When the JSON data is parsed into the dynamic TableView cell we can easily delete the cell with a swipe, the TableView will then reload itself with a custom made animation and Core Data will update and save the changes in realtime. There is also an option to send HTTP GET requests to the JSONPlaceholder server.
+Networking in Swift with REST API calls and URLSession, that puts the parsed JSON Data from an HTTP based JSON storage endpoint I created into a TableView and persists the data using Core Data with CRUD (create, read, update, and delete). I used also Unit Tests to test URLSession asynchronous network operations and make the project as robust as possible. When the JSON data is parsed into the dynamic TableView cell we can easily delete the cell with a swipe, the TableView will then reload itself with a custom made animation and Core Data will update and save the changes in realtime. There is also an option to send HTTP GET requests to the JSONPlaceholder server and show all the users on the map from their corresponding lat and long coordinates.
 
 And last but not least I implemented a settings launcher slide-up menu that slides up from the bottom of the screen when the settings tab bar button is pressed. On the slide-up menu, we have all the functionalities I mentioned above like getting the data from the REST API, filtering the data in the cells using a search bar and sorting them in the right alphabetical order, and also send data to a REST API.
-
 This whole project is created completely programmatically without Storyboards and Interface Builder.
 ___
 ## Side Note
@@ -31,9 +30,20 @@ ___
 
 ## Example how the UI looks
 
-* On the left side, we see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API.
+* On the left side, we see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API. When the images are downloaded the first time there are cached to the device, so the next time there's no need to download it again.
 
-* On the right side, we can see a custom created slide menu with buttons inside init that shows up when the "more icon/button" is tapped inside the NavigationBar, also worth noticing when the slide menu shows up the backgorund bahinde it dims swith a smooth animation.   
+   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/cellsAndSlideMenu.png)
+   
+* On the right side, we can see a custom created slide menu with buttons inside init that shows up when the "more icon/button" is tapped inside the NavigationBar, also worth noticing when the slide menu shows up the backgorund bahinde it dims swith a smooth animation.
+___
+
+* In this image on the left side we see the implmented search by lowercase and uppercase latters, filtter and sort by alphabetical order functionality
+
+  ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/searchAndPullToRefresh.png)
+
+* On the other side there is the currently put in motion pull to refresh functionality that downloads or reloads the data if necessary.
+
+___
 
 ## License
 ```
