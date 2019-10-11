@@ -18,9 +18,9 @@ ___
 ___
 
 ## Requirements
-- Swift 4.2+
-- Xcode 9.2+
-- iOS 11.0+
+- Swift 5.0+
+- Xcode 10.2+
+- iOS 12.2+
 ___
 
 ## Getting the files
