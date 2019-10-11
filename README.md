@@ -39,6 +39,7 @@ ___
 
 * In this image on the left side we see the implmented search by lowercase and uppercase latters, filtter and sort by alphabetical order functionality
 
+  ![alt text]()
 
 * On the other side there is the currently put in motion pull to refresh functionality that download or reloads the data if necessary.
 
