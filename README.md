@@ -56,8 +56,13 @@ ___
    ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/deleteDetailVCAndMap.png)
    
 * On the far right side of the image, we can see MKMapView with annotations showing the users locations on the map
-
 ___
+
+## The Project
+
+* A short sneak peek into the project. 😄💻
+
+   ![alt text](https://github.com/IlijaMihajlovic/Sweet-Sweets-Mania-SpriteKit-Game/blob/master/Images/project.png)
 
 ## License
 ```
