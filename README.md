@@ -39,7 +39,7 @@ ___
 
 * In this image on the left side we see the implmented search by lowercase and uppercase latters, filtter and sort by alphabetical order functionality
 
-  ![alt text]()
+  ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/searchAndPullToRefresh.png)
 
 * On the other side there is the currently put in motion pull to refresh functionality that download or reloads the data if necessary.
 
