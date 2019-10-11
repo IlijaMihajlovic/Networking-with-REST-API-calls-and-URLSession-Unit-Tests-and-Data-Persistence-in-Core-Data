@@ -46,7 +46,7 @@ ___
 
 * On the left and right side, we can see an UIAlertController with four UITextFields that require some intput data so we can send an HTTP POST request. If the data type input is incorrect or one of the text fields is left blank the send button will be unavailable till all the fields are filled correctly.
 
-   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/sendMessage.png)
+   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/send%20Message.png)
 ___
 
 ## License
