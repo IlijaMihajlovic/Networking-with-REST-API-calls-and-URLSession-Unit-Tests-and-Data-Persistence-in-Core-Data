@@ -44,7 +44,7 @@ ___
 * On the other side there is the currently put in motion pull to refresh functionality that downloads or reloads the data if necessary.
 ___
 
-* On the left and right side, we can see an UIAlertController with four UITextFields that require some intput data so we can send an HTTP POST request. If the data type input is incorrect or one of the text fields is left blank the send button will be unavailable till all the fields are filled correctly.
+* On the left and right mockup, we can see an UIAlertController with four UITextFields that require some intput data so we can send an HTTP POST request. If the data type input is incorrect or one of the text fields is left blank the send button will be unavailable till all the fields are filled correctly.
 
    ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/send%20Message.png)
 ___
