@@ -53,7 +53,7 @@ ___
 
    The mockup in the middle of the image shows what I call the DetailViewController that's get loaded when the user taps on a cell. This DetailViewController showcases more information from a particular user cell.
 
-   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/send%20Message.png)
+   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/deleteDetailVCAndMap.png)
    
 * On the far right side of the image, we can see MKMapView with annotations showing the users locations on the map
 
