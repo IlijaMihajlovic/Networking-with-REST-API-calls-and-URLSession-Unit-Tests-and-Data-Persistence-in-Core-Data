@@ -30,7 +30,7 @@ ___
 
 ## Example how the UI looks
 
-* On the left side, we see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API. When the images are downloaded the first time there are cached to the device, so the next time there's no need to download it again.
+* On the left side, we can see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API. When the images are downloaded the first time there are cached to the device, so the next time there's no need to download it again.
 
    ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/cellsAndSlideMenu.png)
    
@@ -42,7 +42,11 @@ ___
   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/searchAndPullToRefresh.png)
 
 * On the other side there is the currently put in motion pull to refresh functionality that downloads or reloads the data if necessary.
+___
 
+* On the left and right side, we can see an UIAlertController with four UITextFields that require some intput data so we can send an HTTP POST request. If the data type input is incorrect or one of the text fields is left blank the send button will be unavailable till all the fields are filled correctly.
+
+   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/sendMessage.png)
 ___
 
 ## License
