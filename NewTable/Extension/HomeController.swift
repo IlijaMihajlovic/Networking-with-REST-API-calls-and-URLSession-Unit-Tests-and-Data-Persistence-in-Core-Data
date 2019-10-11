@@ -161,7 +161,7 @@ final class HomeController: UITableViewController {
     //MARK: - Send Message to API
     @objc  func sendMessage() {
         
-        let alert = UIAlertController(title: "API Request", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Send Message", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
         let sendAction = UIAlertAction(title: "Send", style: .default) { (action: UIAlertAction!) -> Void in
             
