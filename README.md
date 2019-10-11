@@ -49,6 +49,16 @@ ___
    ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/send%20Message.png)
 ___
 
+* On the first mockup, we can see when the user swipes to the left and tries to delete the cell. If the cell is then deleted core data updates the database with new changes and the table view gets reloaded to represent the changes.
+
+   
+
+   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/send%20Message.png)
+   
+* On the far right side of the image, we can see MKMapView with annotations showing the users locations on the map
+
+___
+
 ## License
 ```
 MIT License
