@@ -30,7 +30,7 @@ ___
 
 ## Example how the UI looks
 
-* On the left side, we see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API. When the images are downloaded the first time there are cached to the device, so the next time there's no need to download it again.
+* On the left side, we can see the home controller which is a TableViewController embedded in a TabController. The TabController  also has a MapController that shows all the users location on the map. Going back to HomeController we can see the TableView cells loaded with the fetched JSON data from the REST API. When the images are downloaded the first time there are cached to the device, so the next time there's no need to download it again.
 
    ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/cellsAndSlideMenu.png)
    
