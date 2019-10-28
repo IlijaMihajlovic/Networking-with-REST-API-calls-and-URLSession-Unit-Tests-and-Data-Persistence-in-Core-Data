@@ -54,7 +54,7 @@ final class DetailVC: UIViewController {
         addViewToSubView()
         addConstraints()
     }
-    
+
     private init() {
         super.init(nibName: nil, bundle: nil)
     }

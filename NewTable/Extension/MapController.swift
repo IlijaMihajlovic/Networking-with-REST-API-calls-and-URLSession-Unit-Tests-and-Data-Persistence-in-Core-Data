@@ -11,11 +11,10 @@ import MapKit
 
 final class MapController: UIViewController {
     
-     var mapView: MKMapView!
+    fileprivate var mapView: MKMapView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Map"
         configureMapView()
         checkJSONDataGeoDataForPossibleErrors()
     }
@@ -24,7 +23,6 @@ final class MapController: UIViewController {
          super.viewWillAppear(animated)
          navigationController?.setNavigationBarHidden(true, animated: animated)
      }
-    
     
     //MARK: - Custom Functions
     fileprivate func checkJSONDataGeoDataForPossibleErrors() {
