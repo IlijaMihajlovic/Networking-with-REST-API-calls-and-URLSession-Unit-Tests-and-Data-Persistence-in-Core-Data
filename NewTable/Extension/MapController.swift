@@ -20,6 +20,11 @@ final class MapController: UIViewController {
         checkJSONDataGeoDataForPossibleErrors()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         navigationController?.setNavigationBarHidden(true, animated: animated)
+     }
+    
     
     //MARK: - Custom Functions
     fileprivate func checkJSONDataGeoDataForPossibleErrors() {

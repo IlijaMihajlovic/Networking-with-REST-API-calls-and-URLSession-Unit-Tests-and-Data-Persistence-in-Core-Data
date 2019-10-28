@@ -15,8 +15,6 @@ final class HomeController: UITableViewController {
     //MARK: - Properties
     var isSearching = false
     var incomingDataArray = [User]()
-    
-    
     var filterdArray = [User]()
     
     lazy fileprivate var searchBar: UISearchBar = {
@@ -24,7 +22,6 @@ final class HomeController: UITableViewController {
         searchBar.sizeToFit()
         return searchBar
     }()
-    
     
     lazy var customRefreshControl: UIRefreshControl = {
           var refreshControl = UIRefreshControl()
@@ -59,7 +56,13 @@ final class HomeController: UITableViewController {
             
         }
     }
- 
+    
+    override func viewWillDisappear(_ animated: Bool) {
+          super.viewWillDisappear(animated)
+          navigationController?.setNavigationBarHidden(false, animated: animated)
+      }
+    
+    
     private init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -123,7 +126,6 @@ final class HomeController: UITableViewController {
      }
     
     @objc func refreshCollectionViewPulled(refreshControl: UIRefreshControl) {
-           print("Refresh")
            getJSONDataAndCheckForPossibleErrors()
            
            DispatchQueue.main.async {
