@@ -62,7 +62,7 @@ ___
 
 * A short sneak peek into the project. 😄💻
 
-   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/project.png)
+   ![alt text](https://github.com/IlijaMihajlovic/Networking-with-REST-API-calls-and-URLSession-Unit-Tests-and-Data-Persistence-in-Core-Data/blob/master/Images/screenshot.png)
 ___   
 
 ## License
