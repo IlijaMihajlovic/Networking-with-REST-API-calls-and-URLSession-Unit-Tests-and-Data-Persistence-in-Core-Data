@@ -10,7 +10,6 @@ import Foundation
 
 struct Networking {
     
-    //Singleton
     private init() {}
     static let shared = Networking()
     

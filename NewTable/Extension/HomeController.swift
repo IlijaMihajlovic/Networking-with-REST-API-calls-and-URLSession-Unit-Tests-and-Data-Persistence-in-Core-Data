@@ -10,12 +10,13 @@ import UIKit
 
 final class HomeController: UITableViewController {
     
-    //Singleton
     static let shared = HomeController()
     
     //MARK: - Properties
     var isSearching = false
     var incomingDataArray = [User]()
+    
+    
     var filterdArray = [User]()
     
     lazy fileprivate var searchBar: UISearchBar = {
