@@ -1,4 +1,4 @@
-# Networking-with-REST-API-calls-and-URLSession,Unit-Tests-and-Data-Persistence-in-Core-Data
+# Networking with REST API calls and URLSession,Unit Tests and Data Persistence in Core Data
 
 ![platform-ios](https://img.shields.io/badge/platform-ios-Blue.svg)
 ![swift-version](https://img.shields.io/badge/swift-5.0-Orange.svg)
